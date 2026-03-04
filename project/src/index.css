@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[#0b0b0f] text-white;
+    cursor: none; /* Forzar cursor oculto en todo el cuerpo */
+  }
+
+  /* Asegurar que todos los elementos interactivos oculten el cursor nativo */
+  a, button, input, textarea, [role="button"], .cursor-pointer {
+    cursor: none !important;
+  }
+
+  /* Estilos de la barra de desplazamiento personalizada */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #3b82f6; /* Azul de Tailwind (blue-500) */
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #2563eb; /* Azul más oscuro (blue-600) */
+  }
+
+  /* Animación de deslizamiento para el Showreel */
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(calc(var(--slide-direction) * 100px)) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  }
+
+  /* Animaciones de Zoom */
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes zoomOut {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+  }
+
+  .animate-zoom-in {
+    animation: zoomIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+
+  .animate-zoom-out {
+    animation: zoomOut 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+}
+
+@layer utilities {
+  .animate-in {
+    animation: fadeIn 0.3s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
