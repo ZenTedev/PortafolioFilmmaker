@@ -11,8 +11,15 @@ interface Project {
   gallery: string[];
 }
 
-const generateGallery = (seed: number, count: number): string[] => {
-  return Array.from({ length: count }, (_, i) => `https://images.pexels.com/photos/${seed + i}/pexels-photo-${seed + i}.jpeg?auto=compress&cs=tinysrgb&w=800`);
+// Helper para optimizar imágenes de Cloudinary
+// Añade transformaciones automáticas de formato y calidad
+const optimizeCloudinary = (url: string, width?: number) => {
+  if (!url.includes('cloudinary.com')) return url;
+  const parts = url.split('/upload/');
+  const transformation = width 
+    ? `f_auto,q_auto,w_${width},c_limit` 
+    : 'f_auto,q_auto';
+  return `${parts[0]}/upload/${transformation}/${parts[1]}`;
 };
 
 const projects: Project[] = [
@@ -20,63 +27,63 @@ const projects: Project[] = [
     id: 1,
     title: 'Lanzamiento de Marca Tecnológica',
     category: 'Comercial',
-    thumbnail: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800',
+    thumbnail: 'https://res.cloudinary.com/demo/image/upload/sample.jpg',
     gallery: [
-      'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920',
-      'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1920',
-      'https://images.pexels.com/photos/3184293/pexels-photo-3184293.jpeg?auto=compress&cs=tinysrgb&w=1920',
-      'https://images.pexels.com/photos/3184294/pexels-photo-3184294.jpeg?auto=compress&cs=tinysrgb&w=1920',
-      'https://images.pexels.com/photos/3184295/pexels-photo-3184295.jpeg?auto=compress&cs=tinysrgb&w=1920',
-      'https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&cs=tinysrgb&w=1920',
-      'https://images.pexels.com/photos/3184297/pexels-photo-3184297.jpeg?auto=compress&cs=tinysrgb&w=1920',
-      'https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=1920',
-      'https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      'https://res.cloudinary.com/demo/image/upload/sample.jpg',
+      'https://res.cloudinary.com/demo/image/upload/couple.jpg',
+      'https://res.cloudinary.com/demo/image/upload/dog.jpg',
+      'https://res.cloudinary.com/demo/image/upload/landscape.jpg',
+      'https://res.cloudinary.com/demo/image/upload/sheep.jpg',
+      'https://res.cloudinary.com/demo/image/upload/woman.jpg',
+      'https://res.cloudinary.com/demo/image/upload/car.jpg',
+      'https://res.cloudinary.com/demo/image/upload/fire.jpg',
+      'https://res.cloudinary.com/demo/image/upload/bike.jpg',
     ]
   },
   {
     id: 2,
     title: 'Película de Identidad Corporativa',
     category: 'Corporativo',
-    thumbnail: 'https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=800',
+    thumbnail: 'https://res.cloudinary.com/demo/image/upload/coffee.jpg',
     gallery: [
-      'https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=1920',
-      'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1920',
-      'https://images.pexels.com/photos/3184340/pexels-photo-3184340.jpeg?auto=compress&cs=tinysrgb&w=1920',
-      'https://images.pexels.com/photos/3184341/pexels-photo-3184341.jpeg?auto=compress&cs=tinysrgb&w=1920',
-      'https://images.pexels.com/photos/3184342/pexels-photo-3184342.jpeg?auto=compress&cs=tinysrgb&w=1920',
-      'https://images.pexels.com/photos/3184343/pexels-photo-3184343.jpeg?auto=compress&cs=tinysrgb&w=1920',
-      'https://images.pexels.com/photos/3184344/pexels-photo-3184344.jpeg?auto=compress&cs=tinysrgb&w=1920',
-      'https://images.pexels.com/photos/3184345/pexels-photo-3184345.jpeg?auto=compress&cs=tinysrgb&w=1920',
-      'https://images.pexels.com/photos/3184346/pexels-photo-3184346.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      'https://res.cloudinary.com/demo/image/upload/coffee.jpg',
+      'https://res.cloudinary.com/demo/image/upload/camera.jpg',
+      'https://res.cloudinary.com/demo/image/upload/watch.jpg',
+      'https://res.cloudinary.com/demo/image/upload/laptop.jpg',
+      'https://res.cloudinary.com/demo/image/upload/phone.jpg',
+      'https://res.cloudinary.com/demo/image/upload/headphones.jpg',
+      'https://res.cloudinary.com/demo/image/upload/tablet.jpg',
+      'https://res.cloudinary.com/demo/image/upload/glasses.jpg',
+      'https://res.cloudinary.com/demo/image/upload/shoes.jpg',
     ]
   },
   {
     id: 3,
     title: 'Campaña de Instagram',
     category: 'Redes Sociales',
-    thumbnail: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800',
-    gallery: generateGallery(3184339, 9)
+    thumbnail: 'https://res.cloudinary.com/demo/image/upload/food.jpg',
+    gallery: Array.from({ length: 9 }, () => 'https://res.cloudinary.com/demo/image/upload/food.jpg')
   },
   {
     id: 4,
     title: 'Evento de Lanzamiento de Producto',
     category: 'Eventos',
-    thumbnail: 'https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=800',
-    gallery: generateGallery(2774556, 9)
+    thumbnail: 'https://res.cloudinary.com/demo/image/upload/party.jpg',
+    gallery: Array.from({ length: 9 }, () => 'https://res.cloudinary.com/demo/image/upload/party.jpg')
   },
   {
     id: 5,
     title: 'Campaña de Marca de Moda',
     category: 'Comercial',
-    thumbnail: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800',
-    gallery: generateGallery(3184360, 9)
+    thumbnail: 'https://res.cloudinary.com/demo/image/upload/fashion.jpg',
+    gallery: Array.from({ length: 9 }, () => 'https://res.cloudinary.com/demo/image/upload/fashion.jpg')
   },
   {
     id: 6,
     title: 'Video de Valores Corporativos',
     category: 'Corporativo',
-    thumbnail: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800',
-    gallery: generateGallery(3184465, 9)
+    thumbnail: 'https://res.cloudinary.com/demo/image/upload/business.jpg',
+    gallery: Array.from({ length: 9 }, () => 'https://res.cloudinary.com/demo/image/upload/business.jpg')
   }
 ];
 
@@ -153,7 +160,7 @@ export default function Projects() {
               className="group relative aspect-video rounded-2xl overflow-hidden cursor-pointer bg-gray-900"
             >
               <img
-                src={project.thumbnail}
+                src={optimizeCloudinary(project.thumbnail, 800)}
                 alt={project.title}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
@@ -195,7 +202,7 @@ export default function Projects() {
             {zoomedImage ? (
               <div className={`relative w-full h-full bg-black/20 rounded-lg overflow-hidden flex justify-center items-center ${isZoomExiting ? 'animate-zoom-out' : 'animate-zoom-in'}`}>
                 <img
-                  src={zoomedImage}
+                  src={optimizeCloudinary(zoomedImage, 1920)}
                   alt="Imagen ampliada"
                   className="w-full h-full object-contain cursor-zoom-out"
                   onClick={handleBackToGallery}
@@ -216,7 +223,7 @@ export default function Projects() {
                     onClick={() => handleImageClick(img)}
                   >
                     <img
-                      src={img}
+                      src={optimizeCloudinary(img, 600)}
                       alt={`${selectedProject.title} - Image ${index + 1}`}
                       className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                     />
