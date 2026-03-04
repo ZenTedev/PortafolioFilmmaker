@@ -8,11 +8,33 @@ export default function Contact() {
     message: ''
   });
 
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+  const encode = (data: any) => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! I will get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
+    setStatus('submitting');
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...formData })
+    })
+      .then(() => {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setStatus('idle'), 5000);
+      })
+      .catch((error) => {
+        console.error(error);
+        setStatus('error');
+        setTimeout(() => setStatus('idle'), 5000);
+      });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -35,7 +57,20 @@ export default function Contact() {
 
         <div className="grid md:grid-cols-3 gap-12">
           <div className="md:col-span-2">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form 
+              onSubmit={handleSubmit} 
+              className="space-y-6"
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+            >
+              {/* Campos ocultos para Netlify */}
+              <input type="hidden" name="form-name" value="contact" />
+              <div className="hidden">
+                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+              </div>
+
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">
                   Nombre
@@ -86,11 +121,23 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-blue-500/50 flex items-center justify-center gap-2"
+                disabled={status === 'submitting'}
+                className="w-full px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-blue-500/50 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Enviar Mensaje
+                {status === 'submitting' ? 'Enviando...' : 'Enviar Mensaje'}
                 <Send size={20} />
               </button>
+
+              {status === 'success' && (
+                <p className="text-green-400 text-center text-sm animate-in fade-in duration-300">
+                  ¡Mensaje enviado con éxito! Me pondré en contacto pronto.
+                </p>
+              )}
+              {status === 'error' && (
+                <p className="text-red-400 text-center text-sm animate-in fade-in duration-300">
+                  Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.
+                </p>
+              )}
             </form>
           </div>
 
@@ -99,7 +146,7 @@ export default function Contact() {
               <h3 className="text-xl font-bold text-white mb-6">Conecta</h3>
               <div className="space-y-4">
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/mxttph/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-gray-400 hover:text-blue-400 transition-colors group"
