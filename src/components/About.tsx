@@ -10,7 +10,7 @@ export default function About() {
 
             <div className="space-y-4 text-gray-400 leading-relaxed">
               <p>
-                Soy <span className="text-white font-semibold">Matías Guzmán</span>, realizador audiovisual y director
+                Soy <span className="text-white font-semibold">Matías Guzmán</span>, realizador audiovisual y editor
                 especializado en <span className="text-blue-400 font-medium">producción de video comercial y corporativo</span>.
               </p>
 
@@ -38,7 +38,7 @@ export default function About() {
           <div className="relative">
             <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-gradient-to-br from-blue-500/20 to-purple-500/20 backdrop-blur-sm border border-white/10">
               <img
-                src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="https://res.cloudinary.com/dauwmekm4/image/upload/v1772609540/samples/people/kitchen-bar.jpg"
                 alt="Matías Guzmán"
                 className="w-full h-full object-cover opacity-80"
               />

@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 
 const images = [
-  'https://images.pexels.com/photos/274937/pexels-photo-274937.jpeg?auto=compress&cs=tinysrgb&w=1920',
-  'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920',
-  'https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=1920',
-  'https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=1920'
+  'https://res.cloudinary.com/dauwmekm4/image/upload/v1772609541/samples/people/smiling-man.jpg',
+  'https://res.cloudinary.com/dauwmekm4/image/upload/v1772609542/samples/people/jazz.jpg',
+  'https://res.cloudinary.com/dauwmekm4/image/upload/v1772609542/samples/people/bicycle.jpg',
+  'https://res.cloudinary.com/dauwmekm4/image/upload/v1772609541/samples/people/boy-snow-hoodie.jpg'
 ];
 
 export default function Hero() {
@@ -38,7 +38,7 @@ export default function Hero() {
         </h1>
 
         <p className="text-xl md:text-2xl text-gray-300 mb-3 font-light tracking-wide">
-          Realizador Audiovisual & Director
+          Realizador Audiovisual & Editor
         </p>
 
         <p className="text-base md:text-lg text-gray-400 mb-12 max-w-2xl">
