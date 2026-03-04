@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 const images = [
   'https://images.pexels.com/photos/274937/pexels-photo-274937.jpeg?auto=compress&cs=tinysrgb&w=1920',
@@ -18,14 +18,6 @@ export default function Hero() {
     return () => clearInterval(timer);
   }, []);
 
-  const nextImage = () => {
-    setCurrentImage((prev) => (prev + 1) % images.length);
-  };
-
-  const prevImage = () => {
-    setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
-  };
-
   return (
     <section className="relative h-screen w-full overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0b0b0f] via-[#0b0b0f]/80 to-[#0b0b0f] z-[5]"></div>
@@ -39,21 +31,6 @@ export default function Hero() {
           style={{ backgroundImage: `url('${img}')` }}
         ></div>
       ))}
-
-      <div className="absolute inset-0 z-10 flex items-center justify-between px-4 md:px-8">
-        <button
-          onClick={prevImage}
-          className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-white/50 hover:text-white transition-all backdrop-blur-sm"
-        >
-          <ChevronLeft size={32} />
-        </button>
-        <button
-          onClick={nextImage}
-          className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-white/50 hover:text-white transition-all backdrop-blur-sm"
-        >
-          <ChevronRight size={32} />
-        </button>
-      </div>
 
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-6 text-center">
         <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-4 tracking-tight">
