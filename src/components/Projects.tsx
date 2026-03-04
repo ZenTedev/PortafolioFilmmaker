@@ -62,28 +62,68 @@ const projects: Project[] = [
     title: 'Campaña de Instagram',
     category: 'Redes Sociales',
     thumbnail: 'https://res.cloudinary.com/demo/image/upload/food.jpg',
-    gallery: Array.from({ length: 9 }, () => 'https://res.cloudinary.com/demo/image/upload/food.jpg')
+    gallery: [
+      'https://res.cloudinary.com/demo/image/upload/sample.jpg',
+      'https://res.cloudinary.com/demo/image/upload/couple.jpg',
+      'https://res.cloudinary.com/demo/image/upload/dog.jpg',
+      'https://res.cloudinary.com/demo/image/upload/landscape.jpg',
+      'https://res.cloudinary.com/demo/image/upload/sheep.jpg',
+      'https://res.cloudinary.com/demo/image/upload/woman.jpg',
+      'https://res.cloudinary.com/demo/image/upload/car.jpg',
+      'https://res.cloudinary.com/demo/image/upload/fire.jpg',
+      'https://res.cloudinary.com/demo/image/upload/bike.jpg',
+    ]
   },
   {
     id: 4,
     title: 'Evento de Lanzamiento de Producto',
     category: 'Eventos',
-    thumbnail: 'https://res.cloudinary.com/demo/image/upload/party.jpg',
-    gallery: Array.from({ length: 9 }, () => 'https://res.cloudinary.com/demo/image/upload/party.jpg')
+  thumbnail: 'https://res.cloudinary.com/demo/image/upload/party.jpg',
+    gallery: [
+      'https://res.cloudinary.com/demo/image/upload/sample.jpg',
+      'https://res.cloudinary.com/demo/image/upload/couple.jpg',
+      'https://res.cloudinary.com/demo/image/upload/dog.jpg',
+      'https://res.cloudinary.com/demo/image/upload/landscape.jpg',
+      'https://res.cloudinary.com/demo/image/upload/sheep.jpg',
+      'https://res.cloudinary.com/demo/image/upload/woman.jpg',
+      'https://res.cloudinary.com/demo/image/upload/car.jpg',
+      'https://res.cloudinary.com/demo/image/upload/fire.jpg',
+      'https://res.cloudinary.com/demo/image/upload/bike.jpg',
+    ]
   },
   {
     id: 5,
     title: 'Campaña de Marca de Moda',
     category: 'Comercial',
-    thumbnail: 'https://res.cloudinary.com/demo/image/upload/fashion.jpg',
-    gallery: Array.from({ length: 9 }, () => 'https://res.cloudinary.com/demo/image/upload/fashion.jpg')
+  thumbnail: 'https://res.cloudinary.com/demo/image/upload/fashion.jpg',
+    gallery: [
+      'https://res.cloudinary.com/demo/image/upload/sample.jpg',
+      'https://res.cloudinary.com/demo/image/upload/couple.jpg',
+      'https://res.cloudinary.com/demo/image/upload/dog.jpg',
+      'https://res.cloudinary.com/demo/image/upload/landscape.jpg',
+      'https://res.cloudinary.com/demo/image/upload/sheep.jpg',
+      'https://res.cloudinary.com/demo/image/upload/woman.jpg',
+      'https://res.cloudinary.com/demo/image/upload/car.jpg',
+      'https://res.cloudinary.com/demo/image/upload/fire.jpg',
+      'https://res.cloudinary.com/demo/image/upload/bike.jpg',
+    ]
   },
   {
     id: 6,
     title: 'Video de Valores Corporativos',
     category: 'Corporativo',
-    thumbnail: 'https://res.cloudinary.com/demo/image/upload/business.jpg',
-    gallery: Array.from({ length: 9 }, () => 'https://res.cloudinary.com/demo/image/upload/business.jpg')
+  thumbnail: 'https://res.cloudinary.com/demo/image/upload/bussines.jpg',
+    gallery: [
+      'https://res.cloudinary.com/demo/image/upload/sample.jpg',
+      'https://res.cloudinary.com/demo/image/upload/couple.jpg',
+      'https://res.cloudinary.com/demo/image/upload/dog.jpg',
+      'https://res.cloudinary.com/demo/image/upload/landscape.jpg',
+      'https://res.cloudinary.com/demo/image/upload/sheep.jpg',
+      'https://res.cloudinary.com/demo/image/upload/woman.jpg',
+      'https://res.cloudinary.com/demo/image/upload/car.jpg',
+      'https://res.cloudinary.com/demo/image/upload/fire.jpg',
+      'https://res.cloudinary.com/demo/image/upload/bike.jpg',
+    ]
   }
 ];
 
