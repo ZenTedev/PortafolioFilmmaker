@@ -1,15 +1,17 @@
 import React from 'react';
 
+import { optimizeCloudinary } from '../utils/cloudinary';
+
 const brands = [
-  { name: 'Meta', logo: 'https://cdn.simpleicons.org/meta/white' },
-  { name: 'Autodesk', logo: 'https://cdn.simpleicons.org/autodesk/white' },
-  { name: 'Figma', logo: 'https://cdn.simpleicons.org/figma/white' },
-  { name: 'Navan', logo: 'https://cdn.simpleicons.org/navan/white' },
-  { name: 'Riot Games', logo: 'https://cdn.simpleicons.org/riotgames/white' },
-  { name: 'ServiceTitan', logo: 'https://cdn.simpleicons.org/servicetitan/white' },
-  { name: 'Stack Overflow', logo: 'https://cdn.simpleicons.org/stackoverflow/white' },
-  { name: 'Zscaler', logo: 'https://cdn.simpleicons.org/zscaler/white' },
-  { name: 'Kubernetes', logo: 'https://cdn.simpleicons.org/kubernetes/white' },
+  { name: 'Meta', logo: 'https://res.cloudinary.com/demo/image/upload/meta-logo.svg' },
+  { name: 'Autodesk', logo: 'https://res.cloudinary.com/demo/image/upload/autodesk-logo.svg' },
+  { name: 'Figma', logo: 'https://res.cloudinary.com/demo/image/upload/figma-logo.svg' },
+  { name: 'Navan', logo: 'https://res.cloudinary.com/demo/image/upload/navan-logo.svg' },
+  { name: 'Riot Games', logo: 'https://res.cloudinary.com/demo/image/upload/riot-games-logo.svg' },
+  { name: 'ServiceTitan', logo: 'https://res.cloudinary.com/demo/image/upload/servicetitan-logo.svg' },
+  { name: 'Stack Overflow', logo: 'https://res.cloudinary.com/demo/image/upload/stackoverflow-logo.svg' },
+  { name: 'Zscaler', logo: 'https://res.cloudinary.com/demo/image/upload/zscaler-logo.svg' },
+  { name: 'Kubernetes', logo: 'https://res.cloudinary.com/demo/image/upload/kubernetes-logo.svg' },
 ];
 
 const Brands: React.FC = () => {
@@ -27,7 +29,7 @@ const Brands: React.FC = () => {
               {extendedBrands.map((brand, index) => (
                 <div key={index} className="flex-shrink-0 w-48 h-20 flex items-center justify-center mx-6">
                   <img 
-                    src={brand.logo} 
+                    src={optimizeCloudinary(brand.logo)} 
                     alt={brand.name} 
                     className="h-8 w-auto object-contain transition-opacity duration-300 opacity-50 hover:opacity-100"
                   />

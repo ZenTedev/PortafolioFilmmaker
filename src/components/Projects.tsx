@@ -11,16 +11,7 @@ interface Project {
   gallery: string[];
 }
 
-// Helper para optimizar imágenes de Cloudinary
-// Añade transformaciones automáticas de formato y calidad
-const optimizeCloudinary = (url: string, width?: number) => {
-  if (!url.includes('cloudinary.com')) return url;
-  const parts = url.split('/upload/');
-  const transformation = width 
-    ? `f_auto,q_auto,w_${width},c_limit` 
-    : 'f_auto,q_auto';
-  return `${parts[0]}/upload/${transformation}/${parts[1]}`;
-};
+import { optimizeCloudinary } from '../utils/cloudinary';
 
 const projects: Project[] = [
   {
@@ -61,7 +52,7 @@ const projects: Project[] = [
     id: 3,
     title: 'Campaña de Instagram',
     category: 'Redes Sociales',
-    thumbnail: 'https://res.cloudinary.com/demo/image/upload/food.jpg',
+    thumbnail: 'https://res.cloudinary.com/demo/image/upload/woman.jpg',
     gallery: [
       'https://res.cloudinary.com/demo/image/upload/sample.jpg',
       'https://res.cloudinary.com/demo/image/upload/couple.jpg',
@@ -78,7 +69,7 @@ const projects: Project[] = [
     id: 4,
     title: 'Evento de Lanzamiento de Producto',
     category: 'Eventos',
-  thumbnail: 'https://res.cloudinary.com/demo/image/upload/party.jpg',
+  thumbnail: 'https://res.cloudinary.com/demo/image/upload/fire.jpg',
     gallery: [
       'https://res.cloudinary.com/demo/image/upload/sample.jpg',
       'https://res.cloudinary.com/demo/image/upload/couple.jpg',
@@ -95,7 +86,7 @@ const projects: Project[] = [
     id: 5,
     title: 'Campaña de Marca de Moda',
     category: 'Comercial',
-  thumbnail: 'https://res.cloudinary.com/demo/image/upload/fashion.jpg',
+  thumbnail: 'https://res.cloudinary.com/demo/image/upload/sheep.jpg',
     gallery: [
       'https://res.cloudinary.com/demo/image/upload/sample.jpg',
       'https://res.cloudinary.com/demo/image/upload/couple.jpg',
@@ -112,7 +103,7 @@ const projects: Project[] = [
     id: 6,
     title: 'Video de Valores Corporativos',
     category: 'Corporativo',
-  thumbnail: 'https://res.cloudinary.com/demo/image/upload/bussines.jpg',
+  thumbnail: 'https://res.cloudinary.com/demo/image/upload/car.jpg',
     gallery: [
       'https://res.cloudinary.com/demo/image/upload/sample.jpg',
       'https://res.cloudinary.com/demo/image/upload/couple.jpg',

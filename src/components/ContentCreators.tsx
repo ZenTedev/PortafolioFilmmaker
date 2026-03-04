@@ -1,29 +1,31 @@
 import React from 'react';
 
+import { optimizeCloudinary } from '../utils/cloudinary';
+
 const creators = [
   { 
     name: 'Prasad Golatkar', 
-    image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'https://res.cloudinary.com/demo/image/upload/creator-1.jpg',
     stats: '23.1K on IG'
   },
   { 
     name: 'Bryan Delimata', 
-    image: 'https://images.pexels.com/photos/1559486/pexels-photo-1559486.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'https://res.cloudinary.com/demo/image/upload/creator-2.jpg',
     stats: '55.9K on IG'
   },
   { 
     name: 'Cynthia Galindo', 
-    image: 'https://images.pexels.com/photos/1382731/pexels-photo-1382731.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'https://res.cloudinary.com/demo/image/upload/creator-3.jpg',
     stats: '35.3K on IG'
   },
   { 
     name: 'Alex Rivera', 
-    image: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'https://res.cloudinary.com/demo/image/upload/creator-4.jpg',
     stats: '120K on YT'
   },
   { 
     name: 'Sofia Chen', 
-    image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'https://res.cloudinary.com/demo/image/upload/creator-5.jpg',
     stats: '89K on TikTok'
   }
 ];
@@ -57,7 +59,7 @@ const ContentCreators: React.FC = () => {
               >
                 {/* Background Image */}
                 <img 
-                  src={creator.image} 
+                  src={optimizeCloudinary(creator.image, 600)} 
                   alt={creator.name} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-80"
                 />
