@@ -6,27 +6,32 @@ const creators = [
   { 
     name: 'Prasad Golatkar', 
     image: 'https://res.cloudinary.com/demo/image/upload/creator-1.jpg',
-    stats: '23.1K on IG'
+    stats: '23.1K on IG',
+    url: 'https://www.instagram.com/prasad.golatkar/'
   },
   { 
     name: 'Bryan Delimata', 
     image: 'https://res.cloudinary.com/demo/image/upload/creator-2.jpg',
-    stats: '55.9K on IG'
+    stats: '55.9K on IG',
+    url: 'https://www.instagram.com/bryandelimata/'
   },
   { 
     name: 'Cynthia Galindo', 
     image: 'https://res.cloudinary.com/demo/image/upload/creator-3.jpg',
-    stats: '35.3K on IG'
+    stats: '35.3K on IG',
+    url: 'https://www.instagram.com/cynthiagalindo/'
   },
   { 
     name: 'Alex Rivera', 
     image: 'https://res.cloudinary.com/demo/image/upload/creator-4.jpg',
-    stats: '120K on YT'
+    stats: '120K on YT',
+    url: 'https://www.youtube.com/@AlexRivera'
   },
   { 
     name: 'Sofia Chen', 
     image: 'https://res.cloudinary.com/demo/image/upload/creator-5.jpg',
-    stats: '89K on TikTok'
+    stats: '89K on TikTok',
+    url: 'https://www.tiktok.com/@sofiachen'
   }
 ];
 
@@ -52,10 +57,13 @@ const ContentCreators: React.FC = () => {
           {/* Carrusel */}
           <div className="flex animate-scroll-infinite gap-6 w-max px-4 md:px-8">
             {extendedCreators.map((creator, index) => (
-              <div 
+              <a 
                 key={index} 
-                data-cursor-text="IG profile"
-                className="flex-shrink-0 w-[240px] md:w-[300px] aspect-[3/4] relative group rounded-[2.5rem] overflow-hidden bg-gray-900 shadow-2xl transition-all duration-500 hover:scale-[1.02] cursor-none"
+                href={creator.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cursor-text="View Profile"
+                className="flex-shrink-0 w-[240px] md:w-[300px] aspect-[3/4] relative group rounded-[2.5rem] overflow-hidden bg-gray-900 shadow-2xl transition-all duration-500 hover:scale-[1.02] cursor-none block"
               >
                 {/* Background Image */}
                 <img 
@@ -76,7 +84,7 @@ const ContentCreators: React.FC = () => {
                     {creator.stats.split(' on ')[0]} <span className="text-gray-500">on</span> <span className="font-semibold text-gray-300">{creator.stats.split(' on ')[1]}</span>
                   </p>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
