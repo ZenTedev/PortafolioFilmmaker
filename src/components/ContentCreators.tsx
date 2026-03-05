@@ -1,6 +1,53 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { optimizeCloudinary } from '../utils/cloudinary';
+
+const AnimatedCounter = ({ valueStr }: { valueStr: string }) => {
+  const [displayValue, setDisplayValue] = useState("0");
+  
+  useEffect(() => {
+    // Extraer número y sufijo (ej: "35.3K" -> 35.3 y "K")
+    const match = valueStr.match(/([\d.]+)([KMB]?)/);
+    
+    if (!match) {
+      setDisplayValue(valueStr);
+      return;
+    }
+
+    const numericValue = parseFloat(match[1]);
+    const suffix = match[2];
+    const duration = 2000; // 2 segundos
+    const frameDuration = 1000 / 60; // 60fps
+    const totalFrames = Math.round(duration / frameDuration);
+    
+    let frame = 0;
+    
+    const counter = setInterval(() => {
+      frame++;
+      const progress = frame / totalFrames;
+      // Easing easeOutQuart
+      const easeProgress = 1 - Math.pow(1 - progress, 4);
+      
+      const currentVal = numericValue * easeProgress;
+      
+      // Formatear: si tiene decimales originales, mantener 1 decimal, sino 0
+      const formattedVal = valueStr.includes('.') 
+        ? currentVal.toFixed(1) 
+        : Math.round(currentVal).toString();
+        
+      setDisplayValue(`${formattedVal}${suffix}`);
+      
+      if (frame === totalFrames) {
+        clearInterval(counter);
+        setDisplayValue(valueStr); // Asegurar valor final exacto
+      }
+    }, frameDuration);
+
+    return () => clearInterval(counter);
+  }, [valueStr]);
+
+  return <span>{displayValue}</span>;
+};
 
 const creators = [
   { 
@@ -141,7 +188,31 @@ const ContentCreators: React.FC = () => {
                     {creator.name}
                   </h4>
                   <p className="text-gray-400 text-xs md:text-sm font-light">
-                    {creator.stats.split(' on ')[0]} <span className="text-gray-500">on</span> <span className="font-semibold text-gray-300">{creator.stats.split(' on ')[1]}</span>
+                    {(() => {
+                      const parts = creator.stats.split(' on ');
+                      const value = parts[0];
+                      const platform = parts[1];
+                      
+                      const isNumeric = /[\d]/.test(value);
+
+                      return (
+                        <>
+                          {isNumeric ? (
+                            <span className="font-semibold text-white">
+                              <AnimatedCounter valueStr={value} />
+                            </span>
+                          ) : (
+                            <span className="font-medium text-gray-300">{value}</span>
+                          )}
+                          {platform && (
+                            <>
+                              <span className="text-gray-500 mx-1">on</span> 
+                              <span className="font-semibold text-gray-300">{platform}</span>
+                            </>
+                          )}
+                        </>
+                      );
+                    })()}
                   </p>
                 </div>
               </a>
