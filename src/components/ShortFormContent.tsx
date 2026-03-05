@@ -32,8 +32,8 @@ export default function ShortFormContent() {
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-blue-500/10 blur-[120px] rounded-full pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
             <span className="font-bold text-white tracking-tight">{t.shortForm.title_prefix} </span>
             <span className="text-blue-500 italic font-serif">{t.shortForm.title_accent}</span>
             {t.shortForm.title_suffix && <span className="font-bold text-white tracking-tight"> {t.shortForm.title_suffix}</span>}
