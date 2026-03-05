@@ -53,13 +53,13 @@ const creators = [
   { 
     name: 'Nico Ruiz', 
     image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772682239/Nico_Ruiz_Solo_mekflh.png', 
-    stats: 'Artist on IG', 
+    stats: '1M on IG', 
     url: 'https://www.instagram.com/nicoruiz_p/?g=5' 
   },
   { 
     name: 'Bryson Bowman', 
     image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772682234/Bryson_Bowman_Solo_eeaxax.png', 
-    stats: 'Artist on IG', 
+    stats: '122K on IG', 
     url: 'https://www.instagram.com/bryson.bowman/' 
   },
   { 
@@ -71,37 +71,37 @@ const creators = [
   { 
     name: 'LuchoSSJ', 
     image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772681422/LuchoSSJ_k3jnmk.jpg', 
-    stats: 'Artist on IG', 
+    stats: '379K on IG', 
     url: 'https://www.instagram.com/luchossj/' 
   },
   { 
     name: 'Lucas Espinoza', 
     image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772681420/Lucas_Espinoza_k4pi37.jpg', 
-    stats: 'Comedian on IG', 
+    stats: '164K on IG', 
     url: 'https://www.instagram.com/lucaspinoza/' 
   },
   { 
     name: 'Jason Cooperson', 
     image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772681418/Jason_Cooperson_a5abjb.jpg', 
-    stats: 'Creator on IG', 
+    stats: '172K on IG', 
     url: 'https://www.instagram.com/jasoncooperson/' 
   },
   { 
     name: 'Exterminia', 
     image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772681416/Exterminia_2_vkpayd.webp', 
-    stats: 'Artist on IG', 
+    stats: '65.2K on IG', 
     url: 'https://www.instagram.com/exterminiacl/' 
   },
   { 
     name: 'Teorema', 
     image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772681412/Teorema_lod1v7.jpg', 
-    stats: 'Rapper on IG', 
-    url: '#' 
+    stats: '1M on IG', 
+    url: 'https://www.instagram.com/teorema.fts/' 
   },
   { 
     name: 'Esteban Düch', 
     image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772681409/Esteban_D%C3%BCtch_fd2gkx.jpg', 
-    stats: 'Artist on IG', 
+    stats: '262K on IG', 
     url: 'https://www.instagram.com/estebanduch/' 
   },
   { 
@@ -113,13 +113,13 @@ const creators = [
   { 
     name: 'Caoz', 
     image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772681404/Caoz_awpdii.jpg', 
-    stats: 'Artist on IG', 
+    stats: '23.4K on IG', 
     url: 'https://www.instagram.com/caozyt/' 
   },
   { 
     name: 'Altoyoyo', 
     image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772681403/Altoyoyo_iqb3t0.jpg', 
-    stats: 'Artist on IG', 
+    stats: '193K on IG', 
     url: 'https://www.instagram.com/altoyoyo/' 
   },
   { 
@@ -131,14 +131,14 @@ const creators = [
   { 
     name: 'Brian Hough', 
     image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772681388/BrianHough_dyurzq.jpg', 
-    stats: 'Artist on IG', 
+    stats: '3.7K on IG', 
     url: 'https://www.instagram.com/brianhhough/' 
   },
   { 
     name: 'Adverso', 
     image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772681387/Adverso_jujqka.jpg', 
-    stats: 'Artist on IG', 
-    url: '#' 
+    stats: '13K on IG', 
+    url: 'https://www.instagram.com/adversogg/' 
   }
 ];
 
