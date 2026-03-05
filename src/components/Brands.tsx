@@ -37,7 +37,7 @@ const Brands: React.FC = () => {
         <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#0b0b0f] to-transparent z-10"></div>
         <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#0b0b0f] to-transparent z-10"></div>
         
-        <div className="flex w-max animate-scroll-infinite">
+        <div className="flex w-max animate-scroll-slow">
           {extendedBrands.map((brand, index) => (
             <div key={index} className="flex-shrink-0 w-48 h-32 flex items-center justify-center mx-8">
               <img 
