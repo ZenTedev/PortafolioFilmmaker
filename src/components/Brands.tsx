@@ -4,15 +4,18 @@ import { useLanguage } from '../context/LanguageContext';
 import { optimizeCloudinary } from '../utils/cloudinary';
 
 const brands = [
-  { name: 'Meta', logo: 'https://res.cloudinary.com/demo/image/upload/meta-logo.svg' },
-  { name: 'Autodesk', logo: 'https://res.cloudinary.com/demo/image/upload/autodesk-logo.svg' },
-  { name: 'Figma', logo: 'https://res.cloudinary.com/demo/image/upload/figma-logo.svg' },
-  { name: 'Navan', logo: 'https://res.cloudinary.com/demo/image/upload/navan-logo.svg' },
-  { name: 'Riot Games', logo: 'https://res.cloudinary.com/demo/image/upload/riot-games-logo.svg' },
-  { name: 'ServiceTitan', logo: 'https://res.cloudinary.com/demo/image/upload/servicetitan-logo.svg' },
-  { name: 'Stack Overflow', logo: 'https://res.cloudinary.com/demo/image/upload/stackoverflow-logo.svg' },
-  { name: 'Zscaler', logo: 'https://res.cloudinary.com/demo/image/upload/zscaler-logo.svg' },
-  { name: 'Kubernetes', logo: 'https://res.cloudinary.com/demo/image/upload/kubernetes-logo.svg' },
+  { name: 'Formula Kart', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687700/Formula_Kart_avgzt4.png' },
+  { name: 'CCHC', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687640/CCHC_b5txlz.png' },
+  { name: 'Sorrel', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687637/Sorrel_q5kfc5.png' },
+  { name: 'Salazar Israel', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687636/Salazar_Israel_jadjr5.png' },
+  { name: 'REC', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687634/REC_qktm4v.png' },
+  { name: 'Mobil', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687633/Mobil_xyddoa.png' },
+  { name: 'Made inn Conce', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687632/Made_inn_Conce_mnydpk.png' },
+  { name: 'Latam Win', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687630/latamwin_doydhj.png' },
+  { name: 'Entel', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687615/Entel_Empresas_hfrgkj.webp' },
+  { name: 'Copec', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687614/Copec_i6yw2v.png' },
+  { name: 'Blumar', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687613/Blumar_yhzstg.png' },
+  { name: 'Andritz', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687612/Andritz_mzdjud.png' }
 ];
 
 const Brands: React.FC = () => {
