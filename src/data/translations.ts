@@ -8,7 +8,6 @@ export const translations = {
     },
     hero: {
       role: "Realizador Audiovisual & Editor",
-      description: "Producción versátil de video para marcas modernas.",
       cta_projects: "Ver Trabajos",
       cta_contact: "Trabajemos Juntos"
     },
@@ -20,8 +19,9 @@ export const translations = {
         1: { title: "LuchoSSJ Aftermovie Metrónomo", desc: "Una selección de los mejores trabajos realizados durante el último año." },
         2: { title: "Nico Ruiz Aftermovie", desc: "Producción audiovisual para campaña de temporada." },
         3: { title: "SORREL | PARIS LOLLAPALOOZA", desc: "Historia de éxito y valores institucionales." },
-        4: { title: "Video de Producto Tech", desc: "Lanzamiento de nueva línea de dispositivos." },
-        5: { title: "Evento Internacional", desc: "Cobertura completa y aftermovie de gran escala." }
+        4: { title: "SORREL | CRUZ VERDE HYSEAC", desc: "Lanzamiento de nueva línea de dispositivos." },
+        5: { title: "SORREL | COCA COLA", desc: "Cobertura completa y aftermovie de gran escala." },
+        6: { title: "SORREL | OMODA JAECOO", desc: "Cobertura completa y aftermovie de gran escala." }
       }
     },
     shortForm: {
@@ -51,9 +51,9 @@ export const translations = {
       }
     },
     brands: {
-      title_prefix: "He Colaborado",
-      title_accent: "Con",
-      title_suffix: ""
+      title_prefix: "He",
+      title_accent: "Colaborado",
+      title_suffix: "Con"
     },
     services: {
       title_prefix: "Te",
@@ -105,7 +105,6 @@ export const translations = {
     },
     hero: {
       role: "Filmmaker & Editor",
-      description: "Versatile video production for modern brands.",
       cta_projects: "View Work",
       cta_contact: "Let's Work Together"
     },
@@ -115,10 +114,11 @@ export const translations = {
       title_suffix: "Work",
       videos: {
         1: { title: "LuchoSSJ Aftermovie Metrónomo", desc: "A selection of the best work produced over the last year." },
-        2: { title: "Summer Commercial", desc: "Audiovisual production for seasonal campaign." },
+        2: { title: "Nico Ruiz Aftermovie", desc: "Audiovisual production for seasonal campaign." },
         3: { title: "SORREL | PARIS LOLLAPALOOZA", desc: "Success story and institutional values." },
-        4: { title: "Tech Product Video", desc: "Launch of a new line of devices." },
-        5: { title: "International Event", desc: "Full coverage and large-scale aftermovie." }
+        4: { title: "SORREL | CRUZ VERDE HYSEAC", desc: "Launch of a new line of devices." },
+        5: { title: "SORREL | COCA COLA", desc: "Full coverage and large-scale aftermovie." },
+        6: { title: "SORREL | OMODA JAECOO", desc: "Full coverage and large-scale aftermovie." }
       }
     },
     shortForm: {
@@ -148,9 +148,9 @@ export const translations = {
       }
     },
     brands: {
-      title_prefix: "I Collaborated",
-      title_accent: "With",
-      title_suffix: ""
+      title_prefix: "I",
+      title_accent: "Collaborated",
+      title_suffix: "With"
     },
     services: {
       title_prefix: "I Offer",
