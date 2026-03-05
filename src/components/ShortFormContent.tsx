@@ -34,7 +34,9 @@ export default function ShortFormContent() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
           <h2 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
-            {t.shortForm.title_prefix} <span className="text-blue-500 italic font-serif">{t.shortForm.title_accent}</span>
+            <span className="font-bold text-white tracking-tight">{t.shortForm.title_prefix} </span>
+            <span className="text-blue-500 italic font-serif">{t.shortForm.title_accent}</span>
+            {t.shortForm.title_suffix && <span className="font-bold text-white tracking-tight"> {t.shortForm.title_suffix}</span>}
           </h2>
           <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
             {t.shortForm.subtitle}

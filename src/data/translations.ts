@@ -25,9 +25,9 @@ export const translations = {
       }
     },
     shortForm: {
-      title_prefix: "He Creado",
-      title_accent: "Contenido",
-      title_suffix: "Vertical",
+      title_prefix: "Formato",
+      title_accent: "Vertical",
+      title_suffix: "",
       subtitle: "Edición de video de alta calidad que mejora la narrativa, atrae espectadores y genera impacto."
     },
     projects: {
@@ -122,9 +122,9 @@ export const translations = {
       }
     },
     shortForm: {
-      title_prefix: "I Created",
-      title_accent: "Vertical",
-      title_suffix: "Content",
+      title_prefix: "Short-Form",
+      title_accent: "Content",
+      title_suffix: "",
       subtitle: "High-quality video editing that enhances storytelling, engages viewers, and makes an impact."
     },
     projects: {
