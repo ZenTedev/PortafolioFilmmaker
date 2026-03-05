@@ -3,7 +3,7 @@ import { X, ArrowLeft } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { optimizeCloudinary } from '../utils/cloudinary';
 
-type CategoryKey = 'all' | 'commercial' | 'corporate' | 'social' | 'events';
+type CategoryKey = 'all' | 'Miniaturas' | 'corporate' | 'social' | 'events';
 
 interface ProjectData {
   id: number;
@@ -19,16 +19,16 @@ interface Project extends ProjectData {
 const projectsData: ProjectData[] = [
   {
     id: 1,
-    category: 'commercial',
+    category: 'Miniaturas',
     thumbnail: 'https://res.cloudinary.com/demo/image/upload/sample.jpg',
     gallery: [
-      'https://res.cloudinary.com/demo/image/upload/sample.jpg',
-      'https://res.cloudinary.com/demo/image/upload/couple.jpg',
-      'https://res.cloudinary.com/demo/image/upload/dog.jpg',
-      'https://res.cloudinary.com/demo/image/upload/landscape.jpg',
-      'https://res.cloudinary.com/demo/image/upload/sheep.jpg',
-      'https://res.cloudinary.com/demo/image/upload/woman.jpg',
-      'https://res.cloudinary.com/demo/image/upload/car.jpg',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772692120/f89793195730981.6953e9ff6b6a2_qohzsx.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772692118/d551e8195730981.6953e9ff6c3d2_hq4h6l.png',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772692116/cc2cad195730981.6953e9ff6b26b_isool4.png',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772692114/7264ce195730981.6953e9ff6a60b_dkjlgp.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772692112/81dcd9195730981.6953e9ff6ca56_orpmex.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772692110/73ca79195730981.6953e9ff6bd3e_dwkblb.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772692109/059dc2195730981.6953e9ff69f32_bwb6xi.webp',
       'https://res.cloudinary.com/demo/image/upload/fire.jpg',
       'https://res.cloudinary.com/demo/image/upload/bike.jpg',
     ]
@@ -83,7 +83,7 @@ const projectsData: ProjectData[] = [
   },
   {
     id: 5,
-    category: 'commercial',
+    category: 'Miniaturas',
   thumbnail: 'https://res.cloudinary.com/demo/image/upload/sheep.jpg',
     gallery: [
       'https://res.cloudinary.com/demo/image/upload/sample.jpg',
@@ -128,7 +128,7 @@ export default function Projects() {
     title: t.projects.items[p.id as keyof typeof t.projects.items].title
   }));
 
-  const categories: CategoryKey[] = ['all', 'commercial', 'corporate', 'social', 'events'];
+  const categories: CategoryKey[] = ['all', 'Miniaturas', 'corporate', 'social', 'events'];
 
   const filteredProjects = selectedCategory === 'all'
     ? projects

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
-import { optimizeCloudinary } from '../utils/cloudinary';
 
 const showreelVideos = [
   {
@@ -24,14 +23,20 @@ const showreelVideos = [
   },
   {
     id: 4,
-    title: "Video de Producto Tech",
-    url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    title: "SORREL | CRUZ VERDE HYSEAC",
+    url: "https://www.youtube.com/embed/61ZeC0JjUiE?si=_VpyY37PVn6XGJCP",
     description: "Lanzamiento de nueva línea de dispositivos."
   },
   {
     id: 5,
-    title: "Evento Internacional",
-    url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    title: "SORREL | COCA COLA",
+    url: "https://www.youtube.com/embed/nhHyRnk6CGw?si=U9VbYO8uxUhmz183",
+    description: "Cobertura completa y aftermovie de gran escala."
+  },
+  {
+    id: 6,
+    title: "SORREL | OMODA JAECOO",
+    url: "https://www.youtube.com/embed/z9zcOyN5x7Y?si=oRFAFVE6QKQftUSu",
     description: "Cobertura completa y aftermovie de gran escala."
   }
 ];

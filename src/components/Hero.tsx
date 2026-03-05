@@ -42,9 +42,6 @@ export default function Hero() {
           {t.hero.role}
         </p>
 
-        <p className="text-base md:text-lg text-gray-400 mb-12 max-w-2xl">
-          {t.hero.description}
-        </p>
 
         <div className="flex flex-col sm:flex-row gap-4">
           <a

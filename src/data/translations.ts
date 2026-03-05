@@ -36,7 +36,7 @@ export const translations = {
       title_suffix: "Proyectos",
       categories: {
         all: "Todos",
-        commercial: "Comercial",
+        Miniaturas: "Miniaturas",
         corporate: "Corporativo",
         social: "Redes Sociales",
         events: "Eventos"
@@ -133,7 +133,7 @@ export const translations = {
       title_suffix: "Projects",
       categories: {
         all: "All",
-        commercial: "Commercial",
+        Miniaturas: "Miniaturas",
         corporate: "Corporate",
         social: "Social Media",
         events: "Events"
