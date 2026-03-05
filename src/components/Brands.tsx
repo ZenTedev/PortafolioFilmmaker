@@ -26,9 +26,11 @@ const Brands: React.FC = () => {
   return (
     <section id="brands" className="py-16 bg-[#0b0b0f] overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 mb-12">
-        <h3 className="text-center text-gray-500 font-medium tracking-widest uppercase">
-          {t.brands.title}
-        </h3>
+        <h2 className="text-center text-4xl md:text-5xl mb-12">
+          <span className="font-bold text-white tracking-tight">{t.brands.title_prefix} </span>
+          <span className="text-blue-500 italic font-serif">{t.brands.title_accent}</span> 
+          {t.brands.title_suffix && <span className="font-bold text-white tracking-tight"> {t.brands.title_suffix}</span>}
+        </h2>
       </div>
       
       <div className="relative w-full overflow-hidden">

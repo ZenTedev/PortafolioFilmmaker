@@ -9,7 +9,9 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              {t.about.title}
+              <span className="font-bold text-white tracking-tight">{t.about.title_prefix} </span>
+              <span className="text-blue-500 italic font-serif">{t.about.title_accent}</span> 
+              <span className="font-bold text-white tracking-tight"> {t.about.title_suffix}</span>
             </h2>
 
             <div className="space-y-4 text-gray-400 leading-relaxed">

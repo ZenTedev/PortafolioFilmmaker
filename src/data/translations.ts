@@ -13,22 +13,27 @@ export const translations = {
       cta_contact: "Trabajemos Juntos"
     },
     showreel: {
-      title: "Demostración de Trabajos",
+      title_prefix: "He Recopilado",
+      title_accent: "Mi",
+      title_suffix: "Trabajo",
       videos: {
         1: { title: "LuchoSSJ Aftermovie Metrónomo", desc: "Una selección de los mejores trabajos realizados durante el último año." },
         2: { title: "Nico Ruiz Aftermovie", desc: "Producción audiovisual para campaña de temporada." },
-        3: { title: "Documental Corporativo", desc: "Historia de éxito y valores institucionales." },
+        3: { title: "SORREL | PARIS LOLLAPALOOZA", desc: "Historia de éxito y valores institucionales." },
         4: { title: "Video de Producto Tech", desc: "Lanzamiento de nueva línea de dispositivos." },
         5: { title: "Evento Internacional", desc: "Cobertura completa y aftermovie de gran escala." }
       }
     },
     shortForm: {
-      title_prefix: "Short-Form",
-      title_accent: "Content",
+      title_prefix: "He Creado",
+      title_accent: "Contenido",
+      title_suffix: "Vertical",
       subtitle: "Edición de video de alta calidad que mejora la narrativa, atrae espectadores y genera impacto."
     },
     projects: {
-      title: "Trabajos Destacados",
+      title_prefix: "He Realizado",
+      title_accent: "Estos",
+      title_suffix: "Proyectos",
       categories: {
         all: "Todos",
         commercial: "Comercial",
@@ -46,10 +51,14 @@ export const translations = {
       }
     },
     brands: {
-      title: "Con la confianza de marcas líderes"
+      title_prefix: "He Colaborado",
+      title_accent: "Con",
+      title_suffix: ""
     },
     services: {
-      title: "Servicios",
+      title_prefix: "Te",
+      title_accent: "Ofrezco",
+      title_suffix: "Servicios",
       subtitle: "Soluciones de video integrales para marcas que exigen excelencia",
       items: {
         1: { title: "Producción de Video", desc: "Servicios de producción integrales desde desarrollo de concepto hasta entrega final, adaptados para narrativa de marca e impacto comercial." },
@@ -59,7 +68,9 @@ export const translations = {
       }
     },
     about: {
-      title: "Acerca de Mí",
+      title_prefix: "Conoce",
+      title_accent: "Más",
+      title_suffix: "Sobre Mí",
       p1: "Soy un <span class=\"text-white font-semibold\">Realizador Audiovisual</span> capaz de ayudarte a llevar tu marca al siguiente nivel.",
       p2: "Lo cual me ha llevado a trabajar con <span class=\"text-blue-400 font-medium\">múltiples creadores y marcas</span>, logrando así cumplir con los requerimientos y la excelencia por la cual se me caracteriza.",
       p3: "",
@@ -99,22 +110,27 @@ export const translations = {
       cta_contact: "Let's Work Together"
     },
     showreel: {
-      title: "Showreels",
+      title_prefix: "I Compiled",
+      title_accent: "My",
+      title_suffix: "Work",
       videos: {
         1: { title: "LuchoSSJ Aftermovie Metrónomo", desc: "A selection of the best work produced over the last year." },
-        2: { title: "Nico Ruiz Aftermovie", desc: "Audiovisual production for seasonal campaign." },
-        3: { title: "Corporate Documentary", desc: "Success story and institutional values." },
+        2: { title: "Summer Commercial", desc: "Audiovisual production for seasonal campaign." },
+        3: { title: "SORREL | PARIS LOLLAPALOOZA", desc: "Success story and institutional values." },
         4: { title: "Tech Product Video", desc: "Launch of a new line of devices." },
         5: { title: "International Event", desc: "Full coverage and large-scale aftermovie." }
       }
     },
     shortForm: {
-      title_prefix: "Short-Form",
-      title_accent: "Content",
+      title_prefix: "I Created",
+      title_accent: "Vertical",
+      title_suffix: "Content",
       subtitle: "High-quality video editing that enhances storytelling, engages viewers, and makes an impact."
     },
     projects: {
-      title: "Featured Work",
+      title_prefix: "I Produced",
+      title_accent: "These",
+      title_suffix: "Projects",
       categories: {
         all: "All",
         commercial: "Commercial",
@@ -132,10 +148,14 @@ export const translations = {
       }
     },
     brands: {
-      title: "Trusted by leading brands"
+      title_prefix: "I Collaborated",
+      title_accent: "With",
+      title_suffix: ""
     },
     services: {
-      title: "Services",
+      title_prefix: "I Offer",
+      title_accent: "Services",
+      title_suffix: "",
       subtitle: "Comprehensive video solutions for brands that demand excellence",
       items: {
         1: { title: "Video Production", desc: "End-to-end production services from concept development to final delivery, tailored for brand storytelling and commercial impact." },
@@ -145,7 +165,9 @@ export const translations = {
       }
     },
     about: {
-      title: "About Me",
+      title_prefix: "Know",
+      title_accent: "More",
+      title_suffix: "About Me",
       p1: "I am a <span class=\"text-white font-semibold\">Filmmaker</span> capable of helping you take your brand to the next level.",
       p2: "This has led me to work with <span class=\"text-blue-400 font-medium\">multiple creators and brands</span>, consistently meeting requirements with the excellence I am known for.",
       p3: "",

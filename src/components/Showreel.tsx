@@ -18,8 +18,8 @@ const showreelVideos = [
   },
   {
     id: 3,
-    title: "Documental Corporativo",
-    url: "https://www.youtube.com/embed/rYSj2kQFOvw?si=wLXGuwadayr9VCac",
+    title: "SORREL | PARIS LOLLAPALOOZA",
+    url: "https://www.youtube.com/embed/AcyzpjVWQkU?si=ADq04a4rv2IgEVVx",
     description: "Historia de éxito y valores institucionales."
   },
   {
@@ -70,7 +70,9 @@ export default function Showreel() {
     <section id="showreel" className="py-24 bg-[#0b0b0f] overflow-hidden">
       <div className="max-w-[1600px] mx-auto px-6">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-center">
-          {t.showreel.title}
+          <span className="font-bold text-white tracking-tight">{t.showreel.title_prefix} </span>
+          <span className="text-blue-500 italic font-serif">{t.showreel.title_accent}</span> 
+          <span className="font-bold text-white tracking-tight"> {t.showreel.title_suffix}</span>
         </h2>
 
         <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto leading-relaxed h-12">

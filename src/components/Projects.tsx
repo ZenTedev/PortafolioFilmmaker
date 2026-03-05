@@ -168,7 +168,9 @@ export default function Projects() {
     <section id="projects" className="py-24 px-6 bg-gradient-to-b from-[#0b0b0f] to-[#121218]">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center">
-          {t.projects.title}
+          <span className="font-bold text-white tracking-tight">{t.projects.title_prefix} </span>
+          <span className="text-blue-500 italic font-serif">{t.projects.title_accent}</span> 
+          <span className="font-bold text-white tracking-tight"> {t.projects.title_suffix}</span>
         </h2>
 
         <div className="flex flex-wrap justify-center gap-3 mb-16">
