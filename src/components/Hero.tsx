@@ -5,8 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 const images = [
   'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772686482/Hero_03_mz6cr2.png',
   'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772686481/Hero_02_lhlxgg.png',
-  'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772686480/Hero_01_yjk4pn.png',
-  'https://res.cloudinary.com/dauwmekm4/image/upload/v1772609541/samples/people/boy-snow-hoodie.jpg'
+  'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772686480/Hero_01_yjk4pn.png'
 ];
 
 export default function Hero() {

@@ -28,7 +28,7 @@ export default function About() {
           <div className="relative">
             <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-gradient-to-br from-blue-500/20 to-purple-500/20 backdrop-blur-sm border border-white/10">
               <img
-                src="https://res.cloudinary.com/dauwmekm4/image/upload/v1772609540/samples/people/kitchen-bar.jpg"
+                src="https://res.cloudinary.com/dlpdodtjp/image/upload/v1772686583/About_me_le4jnl.png"
                 alt="Matías Guzmán"
                 className="w-full h-full object-cover opacity-80"
               />

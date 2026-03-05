@@ -13,7 +13,7 @@ export const translations = {
       cta_contact: "Trabajemos Juntos"
     },
     showreel: {
-      title: "Demostración de Trabajo",
+      title: "Demostración de Trabajos",
       videos: {
         1: { title: "Showreel Principal 2024", desc: "Una selección de los mejores trabajos realizados durante el último año." },
         2: { title: "Comercial de Verano", desc: "Producción audiovisual para campaña de temporada." },
@@ -83,7 +83,7 @@ export const translations = {
   en: {
     nav: {
       projects: "Projects",
-      showreel: "Showreel",
+      showreel: "Showreels",
       about: "About",
       contact: "Contact"
     },
@@ -94,7 +94,7 @@ export const translations = {
       cta_contact: "Let's Work Together"
     },
     showreel: {
-      title: "Showreel",
+      title: "Showreels",
       videos: {
         1: { title: "Main Showreel 2024", desc: "A selection of the best work produced over the last year." },
         2: { title: "Summer Commercial", desc: "Audiovisual production for seasonal campaign." },
