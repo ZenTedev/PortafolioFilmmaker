@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 import { optimizeCloudinary } from '../utils/cloudinary';
 
@@ -17,7 +18,7 @@ const creators = [
   },
   { 
     name: 'Benpi', 
-    image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772682069/Benpi_uitwjp.jpg', 
+    image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772685016/Benpi_Final_yxjvke.png', 
     stats: '68.7K on IG', 
     url: 'https://www.instagram.com/elbenpi/' 
   },
@@ -96,6 +97,7 @@ const creators = [
 ];
 
 const ContentCreators: React.FC = () => {
+  const { t } = useLanguage();
   // Duplicamos los creadores varias veces para asegurar un loop infinito fluido
   const extendedCreators = [...creators, ...creators, ...creators, ...creators];
 
@@ -103,9 +105,9 @@ const ContentCreators: React.FC = () => {
     <section id="content-creators" className="py-24 bg-[#0b0b0f] overflow-hidden">
       <div className="w-full mx-auto">
         <h2 className="text-center text-4xl md:text-5xl mb-20">
-          <span className="font-bold text-white tracking-tight">I </span>
-          <span className="text-blue-500 italic font-serif">Worked</span> 
-          <span className="font-bold text-white tracking-tight"> With</span>
+          <span className="font-bold text-white tracking-tight">{t.creators.title_prefix} </span>
+          <span className="text-blue-500 italic font-serif">{t.creators.title_accent}</span> 
+          <span className="font-bold text-white tracking-tight"> {t.creators.title_suffix}</span>
         </h2>
 
         {/* Contenedor principal con overflow hidden para ocultar los lados - MÁXIMO ANCHO */}

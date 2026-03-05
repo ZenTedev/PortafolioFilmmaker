@@ -1,43 +1,25 @@
 import { Video, Scissors, Palette, Smartphone } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
-const services = [
-  {
-    icon: Video,
-    title: 'Producción de Video',
-    description: 'Servicios de producción integrales desde desarrollo de concepto hasta entrega final, adaptados para narrativa de marca e impacto comercial.'
-  },
-  {
-    icon: Scissors,
-    title: 'Edición',
-    description: 'Postproducción profesional con atención al ritmo, gradación de color y diseño de sonido que eleva tu contenido y cautiva audiencias.'
-  },
-  {
-    icon: Palette,
-    title: 'Dirección Creativa',
-    description: 'Conceptos visuales estratégicos alineados con tu identidad de marca y objetivos de marketing, garantizando consistencia en todos los puntos de contacto.'
-  },
-  {
-    icon: Smartphone,
-    title: 'Contenido para Redes Sociales',
-    description: 'Contenido de video optimizado para plataforma diseñado para máximo engagement, desde reels cortos hasta campañas sociales completas.'
-  }
-];
+const serviceIcons = [Video, Scissors, Palette, Smartphone];
 
 export default function Services() {
+  const { t } = useLanguage();
+
   return (
     <section id="services" className="py-24 px-6 bg-gradient-to-b from-[#121218] to-[#0b0b0f]">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-center">
-          Servicios
+          {t.services.title}
         </h2>
 
         <p className="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
-          Soluciones de video integrales para marcas que exigen excelencia
+          {t.services.subtitle}
         </p>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {services.map((service, index) => {
-            const Icon = service.icon;
+          {serviceIcons.map((Icon, index) => {
+            const serviceData = t.services.items[(index + 1) as keyof typeof t.services.items];
             return (
               <div
                 key={index}
@@ -51,11 +33,11 @@ export default function Services() {
                   </div>
 
                   <h3 className="text-2xl font-bold text-white mb-4">
-                    {service.title}
+                    {serviceData.title}
                   </h3>
 
                   <p className="text-gray-400 leading-relaxed">
-                    {service.description}
+                    {serviceData.desc}
                   </p>
                 </div>
               </div>

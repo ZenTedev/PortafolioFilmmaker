@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 import { optimizeCloudinary } from '../utils/cloudinary';
 
@@ -15,13 +16,14 @@ const brands = [
 ];
 
 const Brands: React.FC = () => {
+  const { t } = useLanguage();
   const extendedBrands = [...brands, ...brands];
 
   return (
     <section id="brands" className="py-16 bg-[#0b0b0f] overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         <h3 className="text-center text-gray-500 font-medium tracking-widest uppercase mb-12">
-          Con la confianza de marcas líderes
+          {t.brands.title}
         </h3>
         <div className="relative">
           <div className="w-full overflow-hidden">

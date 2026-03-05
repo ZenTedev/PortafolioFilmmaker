@@ -1,23 +1,25 @@
 import { useState } from 'react';
 import { X, ArrowLeft } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
+import { optimizeCloudinary } from '../utils/cloudinary';
 
-type Category = 'Todos' | 'Comercial' | 'Corporativo' | 'Redes Sociales' | 'Eventos';
+type CategoryKey = 'all' | 'commercial' | 'corporate' | 'social' | 'events';
 
-interface Project {
+interface ProjectData {
   id: number;
-  title: string;
-  category: Exclude<Category, 'Todos'>;
+  category: Exclude<CategoryKey, 'all'>;
   thumbnail: string;
   gallery: string[];
 }
 
-import { optimizeCloudinary } from '../utils/cloudinary';
+interface Project extends ProjectData {
+  title: string;
+}
 
-const projects: Project[] = [
+const projectsData: ProjectData[] = [
   {
     id: 1,
-    title: 'Lanzamiento de Marca Tecnológica',
-    category: 'Comercial',
+    category: 'commercial',
     thumbnail: 'https://res.cloudinary.com/demo/image/upload/sample.jpg',
     gallery: [
       'https://res.cloudinary.com/demo/image/upload/sample.jpg',
@@ -33,8 +35,7 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    title: 'Película de Identidad Corporativa',
-    category: 'Corporativo',
+    category: 'corporate',
     thumbnail: 'https://res.cloudinary.com/demo/image/upload/coffee.jpg',
     gallery: [
       'https://res.cloudinary.com/demo/image/upload/coffee.jpg',
@@ -50,8 +51,7 @@ const projects: Project[] = [
   },
   {
     id: 3,
-    title: 'Campaña de Instagram',
-    category: 'Redes Sociales',
+    category: 'social',
     thumbnail: 'https://res.cloudinary.com/demo/image/upload/woman.jpg',
     gallery: [
       'https://res.cloudinary.com/demo/image/upload/sample.jpg',
@@ -67,8 +67,7 @@ const projects: Project[] = [
   },
   {
     id: 4,
-    title: 'Evento de Lanzamiento de Producto',
-    category: 'Eventos',
+    category: 'events',
   thumbnail: 'https://res.cloudinary.com/demo/image/upload/fire.jpg',
     gallery: [
       'https://res.cloudinary.com/demo/image/upload/sample.jpg',
@@ -84,8 +83,7 @@ const projects: Project[] = [
   },
   {
     id: 5,
-    title: 'Campaña de Marca de Moda',
-    category: 'Comercial',
+    category: 'commercial',
   thumbnail: 'https://res.cloudinary.com/demo/image/upload/sheep.jpg',
     gallery: [
       'https://res.cloudinary.com/demo/image/upload/sample.jpg',
@@ -101,8 +99,7 @@ const projects: Project[] = [
   },
   {
     id: 6,
-    title: 'Video de Valores Corporativos',
-    category: 'Corporativo',
+    category: 'corporate',
   thumbnail: 'https://res.cloudinary.com/demo/image/upload/car.jpg',
     gallery: [
       'https://res.cloudinary.com/demo/image/upload/sample.jpg',
@@ -119,14 +116,21 @@ const projects: Project[] = [
 ];
 
 export default function Projects() {
-  const [selectedCategory, setSelectedCategory] = useState<Category>('Todos');
+  const { t } = useLanguage();
+  const [selectedCategory, setSelectedCategory] = useState<CategoryKey>('all');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
   const [isZoomExiting, setIsZoomExiting] = useState(false);
 
-  const categories: Category[] = ['Todos', 'Comercial', 'Corporativo', 'Redes Sociales', 'Eventos'];
+  // Mapear datos estáticos con traducciones dinámicas
+  const projects: Project[] = projectsData.map(p => ({
+    ...p,
+    title: t.projects.items[p.id as keyof typeof t.projects.items].title
+  }));
 
-  const filteredProjects = selectedCategory === 'Todos'
+  const categories: CategoryKey[] = ['all', 'commercial', 'corporate', 'social', 'events'];
+
+  const filteredProjects = selectedCategory === 'all'
     ? projects
     : projects.filter(p => p.category === selectedCategory);
 
@@ -164,7 +168,7 @@ export default function Projects() {
     <section id="projects" className="py-24 px-6 bg-gradient-to-b from-[#0b0b0f] to-[#121218]">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center">
-          Trabajos Destacados
+          {t.projects.title}
         </h2>
 
         <div className="flex flex-wrap justify-center gap-3 mb-16">
@@ -178,7 +182,7 @@ export default function Projects() {
                   : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white backdrop-blur-sm'
               }`}
             >
-              {category}
+              {t.projects.categories[category]}
             </button>
           ))}
         </div>
@@ -198,7 +202,9 @@ export default function Projects() {
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                 <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                <p className="text-blue-400 text-sm font-medium">{project.category}</p>
+                <p className="text-blue-400 text-sm font-medium">
+                  {t.projects.categories[project.category]}
+                </p>
               </div>
 
               <div className="absolute inset-0 border-2 border-transparent group-hover:border-blue-500 rounded-2xl transition-colors duration-300 pointer-events-none"></div>
@@ -226,7 +232,9 @@ export default function Projects() {
             {!zoomedImage && (
               <div className="mb-6 text-center">
                 <h3 className="text-2xl md:text-3xl font-bold text-white mb-1">{selectedProject.title}</h3>
-                <p className="text-blue-400">{selectedProject.category}</p>
+                <p className="text-blue-400">
+                  {t.projects.categories[selectedProject.category]}
+                </p>
               </div>
             )}
 

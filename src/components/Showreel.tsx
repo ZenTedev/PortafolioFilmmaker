@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
+import { optimizeCloudinary } from '../utils/cloudinary';
 
 const showreelVideos = [
   {
@@ -35,6 +37,7 @@ const showreelVideos = [
 ];
 
 export default function Showreel() {
+  const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0); // -1 para izquierda, 1 para derecha
 
@@ -67,11 +70,11 @@ export default function Showreel() {
     <section id="showreel" className="py-24 bg-[#0b0b0f] overflow-hidden">
       <div className="max-w-[1600px] mx-auto px-6">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-center">
-          Demostración de Trabajo
+          {t.showreel.title}
         </h2>
 
         <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto leading-relaxed h-12">
-          {showreelVideos[currentIndex].description}
+          {t.showreel.videos[showreelVideos[currentIndex].id as keyof typeof t.showreel.videos].desc}
         </p>
 
         <div className="relative flex items-center justify-center h-[300px] md:h-[500px] lg:h-[600px]">
@@ -163,7 +166,7 @@ export default function Showreel() {
           
           <div className="text-center">
             <h3 className="text-xl font-semibold text-white mb-1">
-              {showreelVideos[currentIndex].title}
+              {t.showreel.videos[showreelVideos[currentIndex].id as keyof typeof t.showreel.videos].title}
             </h3>
             <span className="text-sm text-blue-400 font-medium tracking-widest uppercase">
               {currentIndex + 1} / {showreelVideos.length}

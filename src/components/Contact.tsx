@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { Instagram, Linkedin, Send } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Contact() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -48,11 +50,11 @@ export default function Contact() {
     <section id="contact" className="py-24 px-6 bg-[#0b0b0f]">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-center">
-          Trabajemos Juntos
+          {t.contact.title}
         </h2>
 
         <p className="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
-          ¿Tienes un proyecto en mente? Hablemos de cómo podemos hacer realidad tu visión.
+          {t.contact.subtitle}
         </p>
 
         <div className="grid md:grid-cols-3 gap-12">
@@ -73,7 +75,7 @@ export default function Contact() {
 
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">
-                  Nombre
+                  {t.contact.form.name}
                 </label>
                 <input
                   type="text"
@@ -83,13 +85,13 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
-                  placeholder="Tu nombre"
+                  placeholder={t.contact.form.name}
                 />
               </div>
 
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-2">
-                  Correo Electrónico
+                  {t.contact.form.email}
                 </label>
                 <input
                   type="email"
@@ -99,13 +101,13 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
-                  placeholder="tu.correo@ejemplo.com"
+                  placeholder="email@example.com"
                 />
               </div>
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-2">
-                  Detalles del Proyecto
+                  {t.contact.form.message}
                 </label>
                 <textarea
                   id="message"
@@ -115,7 +117,7 @@ export default function Contact() {
                   required
                   rows={6}
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors resize-none"
-                  placeholder="Cuéntame sobre tu proyecto..."
+                  placeholder={t.contact.form.message}
                 />
               </div>
 
@@ -124,18 +126,18 @@ export default function Contact() {
                 disabled={status === 'submitting'}
                 className="w-full px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-blue-500/50 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {status === 'submitting' ? 'Enviando...' : 'Enviar Mensaje'}
+                {status === 'submitting' ? t.contact.form.sending : t.contact.form.submit}
                 <Send size={20} />
               </button>
 
               {status === 'success' && (
                 <p className="text-green-400 text-center text-sm animate-in fade-in duration-300">
-                  ¡Mensaje enviado con éxito! Me pondré en contacto pronto.
+                  {t.contact.form.success}
                 </p>
               )}
               {status === 'error' && (
                 <p className="text-red-400 text-center text-sm animate-in fade-in duration-300">
-                  Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.
+                  {t.contact.form.error}
                 </p>
               )}
             </form>
