@@ -5,6 +5,7 @@ export default {
     extend: {
       animation: {
         'scroll-infinite': 'scroll-infinite 40s linear infinite',
+        'scroll-slow': 'scroll-infinite 80s linear infinite',
       },
       keyframes: {
         'scroll-infinite': {

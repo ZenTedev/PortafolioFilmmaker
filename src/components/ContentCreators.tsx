@@ -52,7 +52,7 @@ const creators = [
     url: '#' 
   },
   { 
-    name: 'Esteban Dütch', 
+    name: 'Esteban Düch', 
     image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772681409/Esteban_D%C3%BCtch_fd2gkx.jpg', 
     stats: 'Artist on IG', 
     url: '#' 
@@ -115,7 +115,7 @@ const ContentCreators: React.FC = () => {
           <div className="absolute inset-y-0 right-0 w-8 md:w-16 bg-gradient-to-l from-[#0b0b0f] to-transparent z-20 pointer-events-none"></div>
 
           {/* Carrusel */}
-          <div className="flex animate-scroll-infinite gap-6 w-max px-4 md:px-8">
+          <div className="flex animate-scroll-slow gap-6 w-max px-4 md:px-8">
             {extendedCreators.map((creator, index) => (
               <a 
                 key={index} 
