@@ -12,7 +12,7 @@ const brands = [
   { name: 'Mobil', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687633/Mobil_xyddoa.png' },
   { name: 'Made inn Conce', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687632/Made_inn_Conce_mnydpk.png' },
   { name: 'Latam Win', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687630/latamwin_doydhj.png' },
-  { name: 'Entel', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687615/Entel_Empresas_hfrgkj.webp' },
+  { name: 'Entel Empresas', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687615/Entel_Empresas_hfrgkj.webp' },
   { name: 'Copec', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687614/Copec_i6yw2v.png' },
   { name: 'Blumar', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687613/Blumar_yhzstg.png' },
   { name: 'Andritz', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687612/Andritz_mzdjud.png' }
@@ -20,28 +20,30 @@ const brands = [
 
 const Brands: React.FC = () => {
   const { t } = useLanguage();
-  const extendedBrands = [...brands, ...brands];
+  const extendedBrands = [...brands, ...brands, ...brands, ...brands];
 
   return (
     <section id="brands" className="py-16 bg-[#0b0b0f] overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6">
-        <h3 className="text-center text-gray-500 font-medium tracking-widest uppercase mb-12">
+      <div className="max-w-6xl mx-auto px-6 mb-12">
+        <h3 className="text-center text-gray-500 font-medium tracking-widest uppercase">
           {t.brands.title}
         </h3>
-        <div className="relative">
-          <div className="w-full overflow-hidden">
-            <div className="flex animate-scroll-infinite">
-              {extendedBrands.map((brand, index) => (
-                <div key={index} className="flex-shrink-0 w-48 h-32 flex items-center justify-center mx-8">
-                  <img 
-                    src={optimizeCloudinary(brand.logo)} 
-                    alt={brand.name} 
-                    className="h-20 w-auto object-contain transition-opacity duration-300 opacity-60 hover:opacity-100"
-                  />
-                </div>
-              ))}
+      </div>
+      
+      <div className="relative w-full overflow-hidden">
+        <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#0b0b0f] to-transparent z-10"></div>
+        <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#0b0b0f] to-transparent z-10"></div>
+        
+        <div className="flex w-max animate-scroll-infinite">
+          {extendedBrands.map((brand, index) => (
+            <div key={index} className="flex-shrink-0 w-48 h-32 flex items-center justify-center mx-8">
+              <img 
+                src={optimizeCloudinary(brand.logo)} 
+                alt={brand.name} 
+                className="h-20 w-auto object-contain transition-opacity duration-300 opacity-60 hover:opacity-100"
+              />
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
