@@ -6,14 +6,14 @@ import { optimizeCloudinary } from '../utils/cloudinary';
 const showreelVideos = [
   {
     id: 1,
-    title: "Showreel Principal 2024",
-    url: "https://www.youtube.com/embed/JBBWJb4N4Pw?si=f0eY3763lOMVDtRP",
+    title: "LuchoSSJ Aftermovie",
+    url: "https://www.youtube.com/embed/P-oiGjVQmDQ?si=bjIhUpVjn7CH1r6P",
     description: "Una selección de los mejores trabajos realizados durante el último año."
   },
   {
     id: 2,
-    title: "Comercial de Verano",
-    url: "https://www.youtube.com/embed/1t5aNTsgAhk?si=8DVGTphtZNsp_Ga7",
+    title: "Nico Ruiz Aftermovie",
+    url: "https://www.youtube.com/embed/ueBF3SNFNXA?si=D5K-1xRaYXdNCEJI",
     description: "Producción audiovisual para campaña de temporada."
   },
   {

@@ -6,16 +6,17 @@ import { optimizeCloudinary } from '../utils/cloudinary';
 const brands = [
   { name: 'Formula Kart', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687700/Formula_Kart_avgzt4.png' },
   { name: 'CCHC', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687640/CCHC_b5txlz.png' },
-  { name: 'Sorrel', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687637/Sorrel_q5kfc5.png' },
-  { name: 'Salazar Israel', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687636/Salazar_Israel_jadjr5.png' },
+  { name: 'Sorrel', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772688931/Sorrel_x2_etjade.png' },
+  { name: 'Salazar Israel', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772688930/Salazar_x2_icyduo.png' },
   { name: 'REC', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687634/REC_qktm4v.png' },
   { name: 'Mobil', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687633/Mobil_xyddoa.png' },
-  { name: 'Made inn Conce', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687632/Made_inn_Conce_mnydpk.png' },
+  { name: 'Made inn Conce', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772689304/MADEINCONCE_x2_mlxqw7.png' },
   { name: 'Latam Win', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687630/latamwin_doydhj.png' },
-  { name: 'Entel Empresas', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687615/Entel_Empresas_hfrgkj.webp' },
+  { name: 'Entel Empresas', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772689298/Entel_EMpresas_x2_rdynno.png' },
   { name: 'Copec', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687614/Copec_i6yw2v.png' },
   { name: 'Blumar', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687613/Blumar_yhzstg.png' },
-  { name: 'Andritz', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687612/Andritz_mzdjud.png' }
+  { name: 'Andritz', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687612/Andritz_mzdjud.png' },
+  { name: 'Backroom', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772689128/BACKROOM_nvn5qq.png' }
 ];
 
 const Brands: React.FC = () => {

@@ -3,6 +3,7 @@ import Showreel from './components/Showreel';
 import Projects from './components/Projects';
 import Brands from './components/Brands';
 import ContentCreators from './components/ContentCreators';
+import ShortFormContent from './components/ShortFormContent';
 import About from './components/About';
 import Services from './components/Services';
 import Contact from './components/Contact';
@@ -19,6 +20,7 @@ function App() {
         <Hero />
         <Brands />
         <ContentCreators />
+        <ShortFormContent />
         <Showreel />
         <Projects />
         <About />

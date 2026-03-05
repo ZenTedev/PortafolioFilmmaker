@@ -15,12 +15,17 @@ export const translations = {
     showreel: {
       title: "Demostración de Trabajos",
       videos: {
-        1: { title: "Showreel Principal 2024", desc: "Una selección de los mejores trabajos realizados durante el último año." },
-        2: { title: "Comercial de Verano", desc: "Producción audiovisual para campaña de temporada." },
+        1: { title: "LuchoSSJ Aftermovie Metrónomo", desc: "Una selección de los mejores trabajos realizados durante el último año." },
+        2: { title: "Nico Ruiz Aftermovie", desc: "Producción audiovisual para campaña de temporada." },
         3: { title: "Documental Corporativo", desc: "Historia de éxito y valores institucionales." },
         4: { title: "Video de Producto Tech", desc: "Lanzamiento de nueva línea de dispositivos." },
         5: { title: "Evento Internacional", desc: "Cobertura completa y aftermovie de gran escala." }
       }
+    },
+    shortForm: {
+      title_prefix: "Short-Form",
+      title_accent: "Content",
+      subtitle: "Edición de video de alta calidad que mejora la narrativa, atrae espectadores y genera impacto."
     },
     projects: {
       title: "Trabajos Destacados",
@@ -96,12 +101,17 @@ export const translations = {
     showreel: {
       title: "Showreels",
       videos: {
-        1: { title: "Main Showreel 2024", desc: "A selection of the best work produced over the last year." },
-        2: { title: "Summer Commercial", desc: "Audiovisual production for seasonal campaign." },
+        1: { title: "LuchoSSJ Aftermovie Metrónomo", desc: "A selection of the best work produced over the last year." },
+        2: { title: "Nico Ruiz Aftermovie", desc: "Audiovisual production for seasonal campaign." },
         3: { title: "Corporate Documentary", desc: "Success story and institutional values." },
         4: { title: "Tech Product Video", desc: "Launch of a new line of devices." },
         5: { title: "International Event", desc: "Full coverage and large-scale aftermovie." }
       }
+    },
+    shortForm: {
+      title_prefix: "Short-Form",
+      title_accent: "Content",
+      subtitle: "High-quality video editing that enhances storytelling, engages viewers, and makes an impact."
     },
     projects: {
       title: "Featured Work",
