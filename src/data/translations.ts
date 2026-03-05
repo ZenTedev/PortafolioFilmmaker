@@ -55,9 +55,9 @@ export const translations = {
     },
     about: {
       title: "Acerca de Mí",
-      p1: "Soy <span className=\"text-white font-semibold\">Matías Guzmán</span>, realizador audiovisual y editor especializado en <span className=\"text-blue-400 font-medium\">producción de video comercial y corporativo</span>.",
-      p2: "Con años de experiencia trabajando con <span className=\"text-blue-400 font-medium\">marcas y empresas</span>, creo contenido visual que genera resultados y se conecta con las audiencias. Mi enfoque combina <span className=\"text-white font-semibold\"> visión creativa</span> con <span className=\"text-white font-semibold\"> pensamiento estratégico</span>, garantizando que cada proyecto entregue tanto excelencia estética como impacto medible.",
-      p3: "De concepto a entrega final, manejo todo el proceso de producción con enfoque en <span className=\"text-blue-400 font-medium\"> calidad, eficiencia y alineación de marca</span>. Ya sea un comercial de alto nivel, película de identidad corporativa o campaña en redes sociales, aporto versatilidad y profesionalismo a cada colaboración.",
+      p1: "Soy un <span class=\"text-white font-semibold\">Realizador Audiovisual</span> capaz de ayudarte a llevar tu marca al siguiente nivel.",
+      p2: "Lo cual me ha llevado a trabajar con <span class=\"text-blue-400 font-medium\">múltiples creadores y marcas</span>, logrando así cumplir con los requerimientos y la excelencia por la cual se me caracteriza.",
+      p3: "",
       cta: "Creemos algo excepcional juntos."
     },
     creators: {
@@ -136,9 +136,9 @@ export const translations = {
     },
     about: {
       title: "About Me",
-      p1: "I am <span className=\"text-white font-semibold\">Matías Guzmán</span>, a filmmaker and editor specializing in <span className=\"text-blue-400 font-medium\">commercial and corporate video production</span>.",
-      p2: "With years of experience working with <span className=\"text-blue-400 font-medium\">brands and companies</span>, I create visual content that drives results and connects with audiences. My approach combines <span className=\"text-white font-semibold\">creative vision</span> with <span className=\"text-white font-semibold\">strategic thinking</span>, ensuring every project delivers both aesthetic excellence and measurable impact.",
-      p3: "From concept to final delivery, I manage the entire production process with a focus on <span className=\"text-blue-400 font-medium\">quality, efficiency, and brand alignment</span>. Whether it's a high-end commercial, corporate identity film, or social media campaign, I bring versatility and professionalism to every collaboration.",
+      p1: "I am a <span class=\"text-white font-semibold\">Filmmaker</span> capable of helping you take your brand to the next level.",
+      p2: "This has led me to work with <span class=\"text-blue-400 font-medium\">multiple creators and brands</span>, consistently meeting requirements with the excellence I am known for.",
+      p3: "",
       cta: "Let's create something exceptional together."
     },
     creators: {

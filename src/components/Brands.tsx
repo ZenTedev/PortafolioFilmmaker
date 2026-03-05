@@ -32,11 +32,11 @@ const Brands: React.FC = () => {
           <div className="w-full overflow-hidden">
             <div className="flex animate-scroll-infinite">
               {extendedBrands.map((brand, index) => (
-                <div key={index} className="flex-shrink-0 w-48 h-20 flex items-center justify-center mx-6">
+                <div key={index} className="flex-shrink-0 w-48 h-32 flex items-center justify-center mx-8">
                   <img 
                     src={optimizeCloudinary(brand.logo)} 
                     alt={brand.name} 
-                    className="h-8 w-auto object-contain transition-opacity duration-300 opacity-50 hover:opacity-100"
+                    className="h-20 w-auto object-contain transition-opacity duration-300 opacity-60 hover:opacity-100"
                   />
                 </div>
               ))}
