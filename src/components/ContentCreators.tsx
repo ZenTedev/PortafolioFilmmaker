@@ -4,34 +4,94 @@ import { optimizeCloudinary } from '../utils/cloudinary';
 
 const creators = [
   { 
-    name: 'Prasad Golatkar', 
-    image: 'https://res.cloudinary.com/demo/image/upload/creator-1.jpg',
-    stats: '23.1K on IG',
-    url: 'https://www.instagram.com/prasad.golatkar/'
+    name: 'Nico Ruiz', 
+    image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772682239/Nico_Ruiz_Solo_mekflh.png', 
+    stats: 'Artist on IG', 
+    url: '#' 
   },
   { 
-    name: 'Bryan Delimata', 
-    image: 'https://res.cloudinary.com/demo/image/upload/creator-2.jpg',
-    stats: '55.9K on IG',
-    url: 'https://www.instagram.com/bryandelimata/'
+    name: 'Bryson Bowman', 
+    image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772682234/Bryson_Bowman_Solo_eeaxax.png', 
+    stats: 'Artist on IG', 
+    url: '#' 
+  },
+  { 
+    name: 'Benpi', 
+    image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772682069/Benpi_uitwjp.jpg', 
+    stats: 'Artist on IG', 
+    url: '#' 
+  },
+  { 
+    name: 'LuchoSSJ', 
+    image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772681422/LuchoSSJ_k3jnmk.jpg', 
+    stats: 'Artist on IG', 
+    url: '#' 
+  },
+  { 
+    name: 'Lucas Espinoza', 
+    image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772681420/Lucas_Espinoza_k4pi37.jpg', 
+    stats: 'Comedian on IG', 
+    url: '#' 
+  },
+  { 
+    name: 'Jason Cooperson', 
+    image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772681418/Jason_Cooperson_a5abjb.jpg', 
+    stats: 'Creator on IG', 
+    url: '#' 
+  },
+  { 
+    name: 'Exterminia', 
+    image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772681416/Exterminia_2_vkpayd.webp', 
+    stats: 'Artist on IG', 
+    url: '#' 
+  },
+  { 
+    name: 'Teorema', 
+    image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772681412/Teorema_lod1v7.jpg', 
+    stats: 'Rapper on IG', 
+    url: '#' 
+  },
+  { 
+    name: 'Esteban Dütch', 
+    image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772681409/Esteban_D%C3%BCtch_fd2gkx.jpg', 
+    stats: 'Artist on IG', 
+    url: '#' 
   },
   { 
     name: 'Cynthia Galindo', 
-    image: 'https://res.cloudinary.com/demo/image/upload/creator-3.jpg',
-    stats: '35.3K on IG',
-    url: 'https://www.instagram.com/cynthiagalindo/'
+    image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772681407/Cynthia_Galindo_xb6vt0.jpg', 
+    stats: '35.3K on IG', 
+    url: 'https://www.instagram.com/cynthiagalindo/' 
   },
   { 
-    name: 'Alex Rivera', 
-    image: 'https://res.cloudinary.com/demo/image/upload/creator-4.jpg',
-    stats: '120K on YT',
-    url: 'https://www.youtube.com/@AlexRivera'
+    name: 'Caoz', 
+    image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772681404/Caoz_awpdii.jpg', 
+    stats: 'Artist on IG', 
+    url: '#' 
   },
   { 
-    name: 'Sofia Chen', 
-    image: 'https://res.cloudinary.com/demo/image/upload/creator-5.jpg',
-    stats: '89K on TikTok',
-    url: 'https://www.tiktok.com/@sofiachen'
+    name: 'Altoyoyo', 
+    image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772681403/Altoyoyo_iqb3t0.jpg', 
+    stats: 'Artist on IG', 
+    url: '#' 
+  },
+  { 
+    name: 'BknLukas', 
+    image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772681389/BknLukas_hge2ss.jpg', 
+    stats: 'Artist on IG', 
+    url: '#' 
+  },
+  { 
+    name: 'Brian Hough', 
+    image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772681388/BrianHough_dyurzq.jpg', 
+    stats: 'Artist on IG', 
+    url: '#' 
+  },
+  { 
+    name: 'Adverso', 
+    image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772681387/Adverso_jujqka.jpg', 
+    stats: 'Artist on IG', 
+    url: '#' 
   }
 ];
 
