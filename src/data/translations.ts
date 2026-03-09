@@ -37,17 +37,17 @@ export const translations = {
       categories: {
         all: "Todos",
         Miniaturas: "Miniaturas",
-        corporate: "Corporativo",
-        social: "Redes Sociales",
-        events: "Eventos"
+        Matrimonios: "Matrimonios",
+        Corporativo: "Corporativo",
+        Sociales: "Sociales"
       },
       items: {
-        1: { title: "Lanzamiento de Marca Tecnológica" },
-        2: { title: "Película de Identidad Corporativa" },
-        3: { title: "Campaña de Instagram" },
-        4: { title: "Evento de Lanzamiento de Producto" },
-        5: { title: "Campaña de Marca de Moda" },
-        6: { title: "Video de Valores Corporativos" }
+        1: { title: "Miniaturas YouTube" },
+        2: { title: "Matrimonio Civil" },
+        3: { title: "Video Corporativo" },
+        4: { title: "Evento Social" },
+        5: { title: "Diseño Gráfico" },
+        6: { title: "Institucional" }
       }
     },
     brands: {
@@ -133,18 +133,18 @@ export const translations = {
       title_suffix: "Projects",
       categories: {
         all: "All",
-        Miniaturas: "Miniaturas",
-        corporate: "Corporate",
-        social: "Social Media",
-        events: "Events"
+        Miniaturas: "Thumbnails",
+        Matrimonios: "Weddings",
+        Corporativo: "Corporate",
+        Sociales: "Socials"
       },
       items: {
-        1: { title: "Tech Brand Launch" },
-        2: { title: "Corporate Identity Film" },
-        3: { title: "Instagram Campaign" },
-        4: { title: "Product Launch Event" },
-        5: { title: "Fashion Brand Campaign" },
-        6: { title: "Corporate Values Video" }
+        1: { title: "YouTube Thumbnails" },
+        2: { title: "Civil Wedding" },
+        3: { title: "Corporate Video" },
+        4: { title: "Social Event" },
+        5: { title: "Graphic Design" },
+        6: { title: "Institutional" }
       }
     },
     brands: {
