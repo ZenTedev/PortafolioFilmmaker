@@ -4,7 +4,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { optimizeCloudinary } from '../utils/cloudinary';
 import SectionTitle from './SectionTitle';
 
-type CategoryKey = 'all' | 'Miniaturas' | 'Matrimonios' | 'Corporativo' | 'Sociales';
+type CategoryKey = 'all' | 'Miniaturas' | 'Matrimonios' | 'Eventos' | 'Sociales';
 
 interface ProjectData {
   id: number;
@@ -44,22 +44,33 @@ const projectsData: ProjectData[] = [
       'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773048876/b5d12c227241647.683cd254d067b_idvwmw.webp',
       'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773048874/d1bf9c227241647.683cd254d9120_xulqnd.webp',
       'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773048871/41f325227241647.683cd254d1e08_rgwu3d.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773264560/f73f82227241647.683cd254cfa0d_rz3ai3.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773264557/c9dbf2227241647.683cd254d78a8_datp2c.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773264554/b7f898227241647.683cd254d9cce_h8gfg1.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773264551/a084b5227241647.683cd254d628e_on2jot.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773264548/a9e7af227241647.683cd254d7387_jmvgym.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773264546/0686b5227241647.683cd254d5a8d_tphn84.webp',
     ]
   },
   {
     id: 3,
-    category: 'Corporativo',
-    thumbnail: 'https://res.cloudinary.com/demo/image/upload/woman.jpg',
+    category: 'Eventos',
+    thumbnail: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773264490/b668b2243605069.6984c91c469f3_ve9h3p.jpg',
     gallery: [
-      'https://res.cloudinary.com/demo/image/upload/sample.jpg',
-      'https://res.cloudinary.com/demo/image/upload/couple.jpg',
-      'https://res.cloudinary.com/demo/image/upload/dog.jpg',
-      'https://res.cloudinary.com/demo/image/upload/landscape.jpg',
-      'https://res.cloudinary.com/demo/image/upload/sheep.jpg',
-      'https://res.cloudinary.com/demo/image/upload/woman.jpg',
-      'https://res.cloudinary.com/demo/image/upload/car.jpg',
-      'https://res.cloudinary.com/demo/image/upload/fire.jpg',
-      'https://res.cloudinary.com/demo/image/upload/bike.jpg',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773264490/b668b2243605069.6984c91c469f3_ve9h3p.jpg',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773264487/e81516243605069.6984c91b0c837_uvtvii.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773264486/0c5c79243605069.6984c91606e43_k5mmhr.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773264365/6ff286243605069.6984c9189abbe_prg8bi.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773264363/cc4ed0243605069.6984c9172e7fc_wdoulj.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773264360/3f0094243605069.6984c9160646e_ywt61b.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773264357/1bb8dd243605069.6984c91c45c88_plbt2z.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773264352/8cbf61243605069.6984c91b0c07c_pdrwyb.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773264349/2e56e1243605069.6984c91a014c6_gc6lda.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773264346/fd19a2243605069.6984c9172f091_stvfvc.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773264344/a10fb5243605069.6984c91605965_kt6ljm.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773264341/fa03d5243605069.6984c91a01abc_jdw7wz.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773264338/618338243605069.6984c9189ba6e_brkwbw.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773264337/1c4fac243605069.6984c91b0cfb3_zw6kfu.webp',
     ]
   },
   {
@@ -95,7 +106,7 @@ const projectsData: ProjectData[] = [
   },
   {
     id: 6,
-    category: 'Corporativo',
+    category: 'Eventos',
   thumbnail: 'https://res.cloudinary.com/demo/image/upload/car.jpg',
     gallery: [
       'https://res.cloudinary.com/demo/image/upload/sample.jpg',
@@ -125,7 +136,7 @@ export default function Projects() {
   }));
 
   // Estas claves deben existir también en t.projects.categories.
-  const categories: CategoryKey[] = ['all', 'Miniaturas', 'Matrimonios', 'Corporativo', 'Sociales'];
+  const categories: CategoryKey[] = ['all', 'Miniaturas', 'Matrimonios', 'Eventos', 'Sociales'];
 
   const filteredProjects = selectedCategory === 'all'
     ? projects

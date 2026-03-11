@@ -44,13 +44,13 @@ export const translations = {
         all: "Todos",
         Miniaturas: "Miniaturas",
         Matrimonios: "Matrimonios",
-        Corporativo: "Corporativo",
+        Eventos: "Eventos",
         Sociales: "Sociales"
       },
       items: {
         1: { title: "Miniaturas YouTube" },
         2: { title: "Matrimonio Civil" },
-        3: { title: "Video Corporativo" },
+        3: { title: "Eventos" },
         4: { title: "Evento Social" },
         5: { title: "Diseño Gráfico" },
         6: { title: "Institucional" }
@@ -146,13 +146,13 @@ export const translations = {
         all: "All",
         Miniaturas: "Thumbnails",
         Matrimonios: "Weddings",
-        Corporativo: "Corporate",
+        Eventos: "Events",
         Sociales: "Socials"
       },
       items: {
         1: { title: "YouTube Thumbnails" },
         2: { title: "Civil Wedding" },
-        3: { title: "Corporate Video" },
+        3: { title: "Events" },
         4: { title: "Social Event" },
         5: { title: "Graphic Design" },
         6: { title: "Institutional" }
