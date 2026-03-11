@@ -17,7 +17,7 @@ Abrir `http://localhost:5173/`.
 
 ## Deploy en Netlify
 
-Este repo ya incluye configuración base en [netlify.toml](file:///c:/Users/petat/Downloads/portafolio%20zentella/netlify.toml):
+Este repo ya incluye configuración base en [netlify.toml]:
 
 - Build command: `npm run build`
 - Publish directory: `dist`
@@ -37,7 +37,7 @@ Recomendaciones:
 - Scope mínimo: `Functions` (puede estar también en `Builds`).
 - Define el valor en `Production` (y opcionalmente en `Deploy Previews`).
 
-La function está en [cloudinary-assets.js](file:///c:/Users/petat/Downloads/portafolio%20zentella/netlify/functions/cloudinary-assets.js) y se consume con:
+La function está en [cloudinary-assets.js] y se consume con:
 
 `/.netlify/functions/cloudinary-assets?folder=Miniaturas`
 
@@ -54,8 +54,8 @@ Nota: para que `folder=Miniaturas` funcione, tus assets deben tener `public_id` 
 
 El formulario se envía usando Netlify Forms:
 
-- El componente está en [Contact.tsx](file:///c:/Users/petat/Downloads/portafolio%20zentella/src/components/Contact.tsx).
-- Para que Netlify detecte el formulario en un SPA, existe un formulario oculto en [index.html](file:///c:/Users/petat/Downloads/portafolio%20zentella/index.html).
+- El componente está en [Contact.tsx].
+- Para que Netlify detecte el formulario en un SPA, existe un formulario oculto en [index.html].
 
 Para que los mensajes lleguen por correo:
 
