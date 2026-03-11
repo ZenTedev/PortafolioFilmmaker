@@ -29,7 +29,12 @@ export const translations = {
       title_prefix: "Formato",
       title_accent: "Vertical",
       title_suffix: "",
-      subtitle: "Edición de video de alta calidad que mejora la narrativa, atrae espectadores y genera impacto."
+      subtitle: "Edición de video de alta calidad que mejora la narrativa, atrae espectadores y genera impacto.",
+      groups: {
+        1: { title: "Reels Creativos" },
+        2: { title: "Promocionales" },
+        3: { title: "Eventos" }
+      }
     },
     projects: {
       title_prefix: "He Realizado",
@@ -126,7 +131,12 @@ export const translations = {
       title_prefix: "Short-Form",
       title_accent: "Content",
       title_suffix: "",
-      subtitle: "High-quality video editing that enhances storytelling, engages viewers, and makes an impact."
+      subtitle: "High-quality video editing that enhances storytelling, engages viewers, and makes an impact.",
+      groups: {
+        1: { title: "Creative Reels" },
+        2: { title: "Promos" },
+        3: { title: "Events" }
+      }
     },
     projects: {
       title_prefix: "I Produced",

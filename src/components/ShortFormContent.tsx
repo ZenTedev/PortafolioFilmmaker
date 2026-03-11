@@ -10,23 +10,32 @@ const shorts = [
   { id: 4, url: "https://www.youtube.com/embed/S9bCLPwzSC0" },
   { id: 5, url: "https://www.youtube.com/embed/8J7z3R2x1dE" },
   { id: 6, url: "https://www.youtube.com/embed/impSuIygMiQ" },
+  { id: 7, url: "https://www.youtube.com/embed/S9bCLPwzSC0" },
+  { id: 8, url: "https://www.youtube.com/embed/8J7z3R2x1dE" },
+  { id: 9, url: "https://www.youtube.com/embed/impSuIygMiQ" },
 ];
 
 export default function ShortFormContent() {
   const { t } = useLanguage();
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
 
   const itemsToShow = 3;
-  const maxIndex = Math.max(shorts.length - itemsToShow, 0);
+  const paddedShorts: Array<(typeof shorts)[number] | null> = [...shorts];
+  while (paddedShorts.length % itemsToShow !== 0) {
+    paddedShorts.push(null);
+  }
+  const pageCount = Math.max(Math.ceil(paddedShorts.length / itemsToShow), 1);
+  const pageKey = (currentPage + 1) as keyof typeof t.shortForm.groups;
+  const pageTitle = t.shortForm.groups?.[pageKey]?.title;
 
   const handleNext = () => {
-    if (maxIndex === 0) return;
-    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+    if (pageCount <= 1) return;
+    setCurrentPage((prev) => (prev + 1) % pageCount);
   };
 
   const handlePrev = () => {
-    if (maxIndex === 0) return;
-    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
+    if (pageCount <= 1) return;
+    setCurrentPage((prev) => (prev - 1 + pageCount) % pageCount);
   };
 
   return (
@@ -48,6 +57,12 @@ export default function ShortFormContent() {
         </div>
 
         <div className="relative group">
+          <div className="text-center mb-10">
+            <p className="text-sm text-blue-400 font-medium tracking-widest uppercase">
+              {pageTitle || `#${currentPage + 1}`}
+            </p>
+          </div>
+
           {/* Botones de navegación */}
           <button 
             onClick={handlePrev}
@@ -69,32 +84,34 @@ export default function ShortFormContent() {
           <div className="overflow-hidden w-full -mx-4 px-4">
             <div 
               className="flex transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]"
-              // El contenedor tiene 3 cards visibles (w-1/3). Cada "step" mueve 1 card (100/3).
-              style={{ transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)` }}
+              style={{ transform: `translateX(-${currentPage * 100}%)` }}
             >
-              {shorts.map((video) => (
+              {paddedShorts.map((video, idx) => (
                 <div 
-                  key={video.id} 
+                  key={video ? video.id : `spacer-${idx}`} 
                   className="flex-shrink-0 w-full md:w-1/3 px-3 md:px-4 box-border"
                 >
-                  <div className="aspect-[9/16] bg-gray-900 rounded-[2rem] overflow-hidden shadow-2xl border border-white/5 relative group/item hover:border-blue-500/30 transition-colors duration-300">
-                    <iframe 
-                      src={`${video.url}?controls=0&rel=0&modestbranding=1`} 
-                      title={`Short video ${video.id}`}
-                      className="w-full h-full object-cover"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                      allowFullScreen
-                      loading="lazy"
-                    ></iframe>
-                    
-                    {/* Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 pointer-events-none">
-                      <div className="absolute bottom-6 left-6 right-6">
-                        <div className="w-10 h-1 rounded-full bg-blue-500 mb-2"></div>
-                        <p className="text-white font-medium text-sm">Watch Full Video</p>
+                  {video ? (
+                    <div className="aspect-[9/16] bg-gray-900 rounded-[2rem] overflow-hidden shadow-2xl border border-white/5 relative group/item hover:border-blue-500/30 transition-colors duration-300">
+                      <iframe 
+                        src={`${video.url}?controls=0&rel=0&modestbranding=1`} 
+                        title={`Short video ${video.id}`}
+                        className="w-full h-full object-cover"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowFullScreen
+                        loading="lazy"
+                      ></iframe>
+                      
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 pointer-events-none">
+                        <div className="absolute bottom-6 left-6 right-6">
+                          <div className="w-10 h-1 rounded-full bg-blue-500 mb-2"></div>
+                          <p className="text-white font-medium text-sm">Watch Full Video</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  ) : (
+                    <div aria-hidden className="aspect-[9/16] opacity-0"></div>
+                  )}
                 </div>
               ))}
             </div>
@@ -103,12 +120,12 @@ export default function ShortFormContent() {
 
         {/* Indicadores */}
         <div className="flex justify-center mt-12 gap-3">
-          {Array.from({ length: maxIndex + 1 }).map((_, idx) => (
+          {Array.from({ length: pageCount }).map((_, idx) => (
             <button
               key={idx}
-              onClick={() => setCurrentIndex(idx)}
+              onClick={() => setCurrentPage(idx)}
               className={`h-1.5 rounded-full transition-all duration-300 ${
-                currentIndex === idx ? 'bg-blue-500 w-8' : 'bg-gray-700 w-2 hover:bg-gray-500'
+                currentPage === idx ? 'bg-blue-500 w-8' : 'bg-gray-700 w-2 hover:bg-gray-500'
               }`}
               aria-label={`Go to slide ${idx + 1}`}
             />
