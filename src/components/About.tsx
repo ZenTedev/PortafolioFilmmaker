@@ -1,4 +1,5 @@
 import { useLanguage } from '../context/LanguageContext';
+import SectionTitle from './SectionTitle';
 
 export default function About() {
   const { t } = useLanguage();
@@ -8,13 +9,16 @@ export default function About() {
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              <span className="font-bold text-white tracking-tight">{t.about.title_prefix} </span>
-              <span className="text-blue-500 italic font-serif">{t.about.title_accent}</span> 
-              <span className="font-bold text-white tracking-tight"> {t.about.title_suffix}</span>
-            </h2>
+            <SectionTitle
+              prefix={t.about.title_prefix}
+              accent={t.about.title_accent}
+              suffix={t.about.title_suffix}
+              align="left"
+              className="mb-6"
+            />
 
             <div className="space-y-4 text-gray-400 leading-relaxed">
+              {/* Los textos vienen con spans para resaltar palabras (ver translations.ts) */}
               <p dangerouslySetInnerHTML={{ __html: t.about.p1 }} />
 
               <p dangerouslySetInnerHTML={{ __html: t.about.p2 }} />

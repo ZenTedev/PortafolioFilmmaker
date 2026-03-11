@@ -1,3 +1,4 @@
+// Diccionario de traducciones (ES/EN). Las claves son parte de la “API” interna del sitio.
 export const translations = {
   es: {
     nav: {

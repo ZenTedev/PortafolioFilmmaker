@@ -1,9 +1,10 @@
-import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-
 import { optimizeCloudinary } from '../utils/cloudinary';
+import SectionTitle from './SectionTitle';
 
-const brands = [
+type Brand = { name: string; logo: string };
+
+const brands: Brand[] = [
   { name: 'Formula Kart', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687700/Formula_Kart_avgzt4.png' },
   { name: 'CCHC', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772687640/CCHC_b5txlz.png' },
   { name: 'Sorrel', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772688931/Sorrel_x2_etjade.png' },
@@ -19,18 +20,20 @@ const brands = [
   { name: 'Backroom', logo: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772689128/BACKROOM_nvn5qq.png' }
 ];
 
-const Brands: React.FC = () => {
+export default function Brands() {
   const { t } = useLanguage();
   const extendedBrands = [...brands, ...brands, ...brands, ...brands];
 
   return (
     <section id="brands" className="py-16 bg-[#0b0b0f] overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 mb-12">
-        <h2 className="text-center text-4xl md:text-5xl mb-12">
-          <span className="font-bold text-white tracking-tight">{t.brands.title_prefix} </span>
-          <span className="text-blue-500 italic font-serif">{t.brands.title_accent}</span> 
-          {t.brands.title_suffix && <span className="font-bold text-white tracking-tight"> {t.brands.title_suffix}</span>}
-        </h2>
+        {/* Carrusel infinito: duplicamos varias veces para evitar “espacios” en pantallas anchas */}
+        <SectionTitle
+          prefix={t.brands.title_prefix}
+          accent={t.brands.title_accent}
+          suffix={t.brands.title_suffix}
+          className="mb-12"
+        />
       </div>
       
       <div className="relative w-full overflow-hidden">
@@ -51,6 +54,4 @@ const Brands: React.FC = () => {
       </div>
     </section>
   );
-};
-
-export default Brands;
+}

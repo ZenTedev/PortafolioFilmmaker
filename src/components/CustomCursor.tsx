@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
-const CustomCursor: React.FC = () => {
+export default function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [isPointer, setIsPointer] = useState(false);
@@ -11,8 +11,9 @@ const CustomCursor: React.FC = () => {
       setPosition({ x: e.clientX, y: e.clientY });
     };
 
-    const handleHover = (e: any) => {
-      const target = e.target as HTMLElement;
+    const handleHover = (e: MouseEvent) => {
+      const target = e.target;
+      if (!(target instanceof HTMLElement)) return;
       
       // Detectar elementos con texto personalizado
       const hoverData = target.closest('[data-cursor-text]');
@@ -68,6 +69,4 @@ const CustomCursor: React.FC = () => {
       )}
     </div>
   );
-};
-
-export default CustomCursor;
+}

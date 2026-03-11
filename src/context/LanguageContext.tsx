@@ -1,6 +1,7 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, ReactNode } from 'react';
 import { translations, Language, TranslationState } from '../data/translations';
 
+// Contexto simple de i18n: mantiene el idioma actual y expone el diccionario traducido (t).
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;

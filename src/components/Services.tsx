@@ -1,5 +1,6 @@
 import { Video, Scissors, Palette, Smartphone } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import SectionTitle from './SectionTitle';
 
 const serviceIcons = [Video, Scissors, Palette, Smartphone];
 
@@ -9,11 +10,12 @@ export default function Services() {
   return (
     <section id="services" className="py-24 px-6 bg-gradient-to-b from-[#121218] to-[#0b0b0f]">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-center">
-          <span className="font-bold text-white tracking-tight">{t.services.title_prefix} </span>
-          <span className="text-blue-500 italic font-serif">{t.services.title_accent}</span> 
-          {t.services.title_suffix && <span className="font-bold text-white tracking-tight"> {t.services.title_suffix}</span>}
-        </h2>
+        <SectionTitle
+          prefix={t.services.title_prefix}
+          accent={t.services.title_accent}
+          suffix={t.services.title_suffix}
+          className="mb-6"
+        />
 
         <p className="text-gray-400 text-center mb-16 max-w-2xl mx-auto">
           {t.services.subtitle}

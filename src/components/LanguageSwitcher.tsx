@@ -1,7 +1,6 @@
-import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
-export const LanguageSwitcher: React.FC = () => {
+export function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage();
 
   return (
@@ -25,4 +24,4 @@ export const LanguageSwitcher: React.FC = () => {
       </button>
     </div>
   );
-};
+}

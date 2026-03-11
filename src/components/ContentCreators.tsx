@@ -1,9 +1,15 @@
-import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-
 import { optimizeCloudinary } from '../utils/cloudinary';
+import SectionTitle from './SectionTitle';
 
-const creators = [
+type Creator = {
+  name: string;
+  image: string;
+  stats: string;
+  url: string;
+};
+
+const creators: Creator[] = [
   { 
     name: 'Nico Ruiz', 
     image: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772682239/Nico_Ruiz_Solo_mekflh.png', 
@@ -96,27 +102,28 @@ const creators = [
   }
 ];
 
-const ContentCreators: React.FC = () => {
+export default function ContentCreators() {
   const { t } = useLanguage();
-  // Duplicamos los creadores varias veces para asegurar un loop infinito fluido
+  // Duplicamos los creadores para evitar “espacios” visibles durante el loop.
   const extendedCreators = [...creators, ...creators, ...creators, ...creators];
 
   return (
     <section id="content-creators" className="py-24 bg-[#0b0b0f] overflow-hidden">
       <div className="w-full mx-auto">
-        <h2 className="text-center text-4xl md:text-5xl mb-20">
-          <span className="font-bold text-white tracking-tight">{t.creators.title_prefix} </span>
-          <span className="text-blue-500 italic font-serif">{t.creators.title_accent}</span> 
-          <span className="font-bold text-white tracking-tight"> {t.creators.title_suffix}</span>
-        </h2>
+        <SectionTitle
+          prefix={t.creators.title_prefix}
+          accent={t.creators.title_accent}
+          suffix={t.creators.title_suffix}
+          className="mb-20"
+        />
 
-        {/* Contenedor principal con overflow hidden para ocultar los lados - MÁXIMO ANCHO */}
+        {/* Contenedor principal con overflow hidden para ocultar los lados */}
         <div className="relative w-full max-w-[95%] mx-auto overflow-hidden">
           {/* Capas de bloqueo laterales reducidas para mostrar más contenido */}
           <div className="absolute inset-y-0 left-0 w-8 md:w-16 bg-gradient-to-r from-[#0b0b0f] to-transparent z-20 pointer-events-none"></div>
           <div className="absolute inset-y-0 right-0 w-8 md:w-16 bg-gradient-to-l from-[#0b0b0f] to-transparent z-20 pointer-events-none"></div>
 
-          {/* Carrusel */}
+          {/* Carrusel infinito */}
           <div className="flex animate-scroll-slow gap-6 w-max px-4 md:px-8">
             {extendedCreators.map((creator, index) => (
               <a 
@@ -169,6 +176,4 @@ const ContentCreators: React.FC = () => {
       </div>
     </section>
   );
-};
-
-export default ContentCreators;
+}

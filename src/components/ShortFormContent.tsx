@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import SectionTitle from './SectionTitle';
 
 const shorts = [
   { id: 1, url: "https://www.youtube.com/embed/tgbNymZ7vqY" },
@@ -16,35 +17,38 @@ export default function ShortFormContent() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const itemsToShow = 3;
-  const maxIndex = shorts.length - itemsToShow;
+  const maxIndex = Math.max(shorts.length - itemsToShow, 0);
 
   const handleNext = () => {
+    if (maxIndex === 0) return;
     setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
   };
 
   const handlePrev = () => {
+    if (maxIndex === 0) return;
     setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
   };
 
   return (
     <section id="short-form" className="py-24 bg-[#0b0b0f] overflow-hidden relative">
-      {/* Background decoration */}
+      {/* Decoración de fondo */}
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-blue-500/10 blur-[120px] rounded-full pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-            <span className="font-bold text-white tracking-tight">{t.shortForm.title_prefix} </span>
-            <span className="text-blue-500 italic font-serif">{t.shortForm.title_accent}</span>
-            {t.shortForm.title_suffix && <span className="font-bold text-white tracking-tight"> {t.shortForm.title_suffix}</span>}
-          </h2>
+          <SectionTitle
+            prefix={t.shortForm.title_prefix}
+            accent={t.shortForm.title_accent}
+            suffix={t.shortForm.title_suffix}
+            className="mb-6"
+          />
           <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
             {t.shortForm.subtitle}
           </p>
         </div>
 
         <div className="relative group">
-          {/* Navigation Buttons */}
+          {/* Botones de navegación */}
           <button 
             onClick={handlePrev}
             className="absolute -left-4 md:-left-16 top-1/2 -translate-y-1/2 z-20 p-4 rounded-full bg-white/5 hover:bg-blue-600 text-white transition-all backdrop-blur-md border border-white/10 hover:border-transparent hover:shadow-lg hover:shadow-blue-500/30"
@@ -61,10 +65,11 @@ export default function ShortFormContent() {
             <ChevronRight size={28} />
           </button>
 
-          {/* Carousel Container */}
-          <div className="overflow-hidden w-full -mx-4 px-4"> {/* Negative margin to handle padding cut-off */}
+          {/* Carrusel */}
+          <div className="overflow-hidden w-full -mx-4 px-4">
             <div 
-              className="flex transition-transform duration-700 cubic-bezier(0.25, 1, 0.5, 1)"
+              className="flex transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]"
+              // El contenedor tiene 3 cards visibles (w-1/3). Cada "step" mueve 1 card (100/3).
               style={{ transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)` }}
             >
               {shorts.map((video) => (
@@ -82,7 +87,7 @@ export default function ShortFormContent() {
                       loading="lazy"
                     ></iframe>
                     
-                    {/* Hover Overlay */}
+                    {/* Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300 pointer-events-none">
                       <div className="absolute bottom-6 left-6 right-6">
                         <div className="w-10 h-1 rounded-full bg-blue-500 mb-2"></div>
@@ -96,7 +101,7 @@ export default function ShortFormContent() {
           </div>
         </div>
 
-        {/* Pagination Indicators */}
+        {/* Indicadores */}
         <div className="flex justify-center mt-12 gap-3">
           {Array.from({ length: maxIndex + 1 }).map((_, idx) => (
             <button

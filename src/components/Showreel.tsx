@@ -1,50 +1,51 @@
-import { useState } from 'react';
+import { useState, type CSSProperties } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import SectionTitle from './SectionTitle';
 
-const showreelVideos = [
+type ShowreelVideo = {
+  id: number;
+  url: string;
+};
+
+const getYouTubeId = (url: string) => {
+  if (url.includes('embed/')) return url.split('embed/').pop()?.split('?')[0] || '';
+  if (url.includes('v=')) return url.split('v=').pop()?.split('&')[0] || '';
+  if (url.includes('youtu.be/')) return url.split('youtu.be/').pop()?.split('?')[0] || '';
+  return '';
+};
+
+const showreelVideos: ShowreelVideo[] = [
   {
     id: 1,
-    title: "LuchoSSJ Aftermovie",
     url: "https://www.youtube.com/embed/P-oiGjVQmDQ?si=bjIhUpVjn7CH1r6P",
-    description: "Una selección de los mejores trabajos realizados durante el último año."
   },
   {
     id: 2,
-    title: "Nico Ruiz Aftermovie",
     url: "https://www.youtube.com/embed/ueBF3SNFNXA?si=D5K-1xRaYXdNCEJI",
-    description: "Producción audiovisual para campaña de temporada."
   },
   {
     id: 3,
-    title: "SORREL | PARIS LOLLAPALOOZA",
     url: "https://www.youtube.com/embed/AcyzpjVWQkU?si=ADq04a4rv2IgEVVx",
-    description: "Historia de éxito y valores institucionales."
   },
   {
     id: 4,
-    title: "SORREL | CRUZ VERDE HYSEAC",
     url: "https://www.youtube.com/embed/61ZeC0JjUiE?si=_VpyY37PVn6XGJCP",
-    description: "Lanzamiento de nueva línea de dispositivos."
   },
   {
     id: 5,
-    title: "SORREL | COCA COLA",
     url: "https://www.youtube.com/embed/nhHyRnk6CGw?si=U9VbYO8uxUhmz183",
-    description: "Cobertura completa y aftermovie de gran escala."
   },
   {
     id: 6,
-    title: "SORREL | OMODA JAECOO",
     url: "https://www.youtube.com/embed/z9zcOyN5x7Y?si=oRFAFVE6QKQftUSu",
-    description: "Cobertura completa y aftermovie de gran escala."
   }
 ];
 
 export default function Showreel() {
   const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(0); // -1 para izquierda, 1 para derecha
+  const [direction, setDirection] = useState(0); // -1 izquierda, 1 derecha
 
   const getIndex = (offset: number) => {
     return (currentIndex + offset + showreelVideos.length) % showreelVideos.length;
@@ -63,22 +64,15 @@ export default function Showreel() {
   const prevIndex = getIndex(-1);
   const nextIndex = getIndex(1);
 
-  // Función para obtener el ID de YouTube de diferentes formatos de URL
-  const getYouTubeId = (url: string) => {
-    if (url.includes('embed/')) return url.split('embed/').pop()?.split('?')[0];
-    if (url.includes('v=')) return url.split('v=').pop()?.split('&')[0];
-    if (url.includes('youtu.be/')) return url.split('youtu.be/').pop()?.split('?')[0];
-    return '';
-  };
-
   return (
     <section id="showreel" className="py-24 bg-[#0b0b0f] overflow-hidden">
       <div className="max-w-[1600px] mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 text-center">
-          <span className="font-bold text-white tracking-tight">{t.showreel.title_prefix} </span>
-          <span className="text-blue-500 italic font-serif">{t.showreel.title_accent}</span> 
-          <span className="font-bold text-white tracking-tight"> {t.showreel.title_suffix}</span>
-        </h2>
+        <SectionTitle
+          prefix={t.showreel.title_prefix}
+          accent={t.showreel.title_accent}
+          suffix={t.showreel.title_suffix}
+          className="mb-6"
+        />
 
         <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto leading-relaxed h-12">
           {t.showreel.videos[showreelVideos[currentIndex].id as keyof typeof t.showreel.videos].desc}
@@ -98,7 +92,7 @@ export default function Showreel() {
               <div className="relative w-full h-full pointer-events-none">
                 <img 
                   src={`https://img.youtube.com/vi/${getYouTubeId(showreelVideos[prevIndex].url)}/maxresdefault.jpg`}
-                  alt={showreelVideos[prevIndex].title}
+                  alt={t.showreel.videos[showreelVideos[prevIndex].id as keyof typeof t.showreel.videos].title}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/60"></div>
@@ -109,12 +103,12 @@ export default function Showreel() {
             <div 
               key={`current-${currentIndex}`}
               className="relative w-full md:w-[70%] lg:w-[75%] aspect-video bg-gray-900 rounded-2xl overflow-hidden shadow-2xl shadow-blue-500/20 z-10 animate-slide-in"
-              style={{ '--slide-direction': direction } as React.CSSProperties}
+              style={{ '--slide-direction': direction } as CSSProperties}
             >
               <iframe
                 className="absolute inset-0 w-full h-full"
                 src={showreelVideos[currentIndex].url}
-                title={showreelVideos[currentIndex].title}
+                title={t.showreel.videos[showreelVideos[currentIndex].id as keyof typeof t.showreel.videos].title}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
@@ -149,7 +143,7 @@ export default function Showreel() {
               <div className="relative w-full h-full pointer-events-none">
                 <img 
                   src={`https://img.youtube.com/vi/${getYouTubeId(showreelVideos[nextIndex].url)}/maxresdefault.jpg`}
-                  alt={showreelVideos[nextIndex].title}
+                  alt={t.showreel.videos[showreelVideos[nextIndex].id as keyof typeof t.showreel.videos].title}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-black/60"></div>
@@ -184,4 +178,3 @@ export default function Showreel() {
     </section>
   );
 }
-

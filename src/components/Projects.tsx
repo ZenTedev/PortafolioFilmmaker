@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { X, ArrowLeft } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { optimizeCloudinary } from '../utils/cloudinary';
+import SectionTitle from './SectionTitle';
 
-type CategoryKey = 'all' | 'Miniaturas' | 'corporate' | 'social' | 'events';
+type CategoryKey = 'all' | 'Miniaturas' | 'Matrimonios' | 'Corporativo' | 'Sociales';
 
 interface ProjectData {
   id: number;
@@ -20,7 +21,7 @@ const projectsData: ProjectData[] = [
   {
     id: 1,
     category: 'Miniaturas',
-    thumbnail: 'https://res.cloudinary.com/demo/image/upload/sample.jpg',
+    thumbnail: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772692120/f89793195730981.6953e9ff6b6a2_qohzsx.webp',
     gallery: [
       'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772692120/f89793195730981.6953e9ff6b6a2_qohzsx.webp',
       'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772692118/d551e8195730981.6953e9ff6c3d2_hq4h6l.png',
@@ -29,29 +30,25 @@ const projectsData: ProjectData[] = [
       'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772692112/81dcd9195730981.6953e9ff6ca56_orpmex.webp',
       'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772692110/73ca79195730981.6953e9ff6bd3e_dwkblb.webp',
       'https://res.cloudinary.com/dlpdodtjp/image/upload/v1772692109/059dc2195730981.6953e9ff69f32_bwb6xi.webp',
-      'https://res.cloudinary.com/demo/image/upload/fire.jpg',
-      'https://res.cloudinary.com/demo/image/upload/bike.jpg',
     ]
   },
   {
     id: 2,
-    category: 'corporate',
-    thumbnail: 'https://res.cloudinary.com/demo/image/upload/coffee.jpg',
+    category: 'Matrimonios',
+    thumbnail: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773048884/fc358f227241647.683cd254da171_vwteig.webp',
     gallery: [
-      'https://res.cloudinary.com/demo/image/upload/coffee.jpg',
-      'https://res.cloudinary.com/demo/image/upload/camera.jpg',
-      'https://res.cloudinary.com/demo/image/upload/watch.jpg',
-      'https://res.cloudinary.com/demo/image/upload/laptop.jpg',
-      'https://res.cloudinary.com/demo/image/upload/phone.jpg',
-      'https://res.cloudinary.com/demo/image/upload/headphones.jpg',
-      'https://res.cloudinary.com/demo/image/upload/tablet.jpg',
-      'https://res.cloudinary.com/demo/image/upload/glasses.jpg',
-      'https://res.cloudinary.com/demo/image/upload/shoes.jpg',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773048884/fc358f227241647.683cd254da171_vwteig.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773048882/c7d1c9227241647.683cd254cff7d_mkw8rm.jpg',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773048879/436e48227241647.683cd254d2b0b_uoqx7y.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773048877/47a33e227241647.683cd254d5511_owwbah.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773048876/b5d12c227241647.683cd254d067b_idvwmw.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773048874/d1bf9c227241647.683cd254d9120_xulqnd.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773048871/41f325227241647.683cd254d1e08_rgwu3d.webp',
     ]
   },
   {
     id: 3,
-    category: 'social',
+    category: 'Corporativo',
     thumbnail: 'https://res.cloudinary.com/demo/image/upload/woman.jpg',
     gallery: [
       'https://res.cloudinary.com/demo/image/upload/sample.jpg',
@@ -67,18 +64,17 @@ const projectsData: ProjectData[] = [
   },
   {
     id: 4,
-    category: 'events',
-  thumbnail: 'https://res.cloudinary.com/demo/image/upload/fire.jpg',
+    category: 'Sociales',
+  thumbnail: 'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773048790/e59d74243605069.6984c6fc55ef1_kmrdlk.webp',
     gallery: [
-      'https://res.cloudinary.com/demo/image/upload/sample.jpg',
-      'https://res.cloudinary.com/demo/image/upload/couple.jpg',
-      'https://res.cloudinary.com/demo/image/upload/dog.jpg',
-      'https://res.cloudinary.com/demo/image/upload/landscape.jpg',
-      'https://res.cloudinary.com/demo/image/upload/sheep.jpg',
-      'https://res.cloudinary.com/demo/image/upload/woman.jpg',
-      'https://res.cloudinary.com/demo/image/upload/car.jpg',
-      'https://res.cloudinary.com/demo/image/upload/fire.jpg',
-      'https://res.cloudinary.com/demo/image/upload/bike.jpg',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773048790/e59d74243605069.6984c6fc55ef1_kmrdlk.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773048787/e1c02b243605069.6984c6faef11a_uykwwf.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773048785/d11517243605069.6984c6f88f21c_r9ri8u.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773048783/cbbe80243605069.6984c6fc5537c_kp8qzm.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773048780/c6f24d243605069.6984c6f88e798_pjbgbn.jpg',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773048778/b5794d243605069.6984c6f9ed693_mtcoum.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773048777/a50c0b243605069.6984c6f88e053_jz47fm.webp',
+      'https://res.cloudinary.com/dlpdodtjp/image/upload/v1773048776/4d55c6243605069.6984c6faee2fb_lmomk9.webp',
     ]
   },
   {
@@ -99,7 +95,7 @@ const projectsData: ProjectData[] = [
   },
   {
     id: 6,
-    category: 'corporate',
+    category: 'Corporativo',
   thumbnail: 'https://res.cloudinary.com/demo/image/upload/car.jpg',
     gallery: [
       'https://res.cloudinary.com/demo/image/upload/sample.jpg',
@@ -122,13 +118,14 @@ export default function Projects() {
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
   const [isZoomExiting, setIsZoomExiting] = useState(false);
 
-  // Mapear datos estáticos con traducciones dinámicas
+  // Los datos (URLs + categoría) viven acá; los textos (títulos/categorías) salen de translations.ts.
   const projects: Project[] = projectsData.map(p => ({
     ...p,
     title: t.projects.items[p.id as keyof typeof t.projects.items].title
   }));
 
-  const categories: CategoryKey[] = ['all', 'Miniaturas', 'corporate', 'social', 'events'];
+  // Estas claves deben existir también en t.projects.categories.
+  const categories: CategoryKey[] = ['all', 'Miniaturas', 'Matrimonios', 'Corporativo', 'Sociales'];
 
   const filteredProjects = selectedCategory === 'all'
     ? projects
@@ -167,11 +164,12 @@ export default function Projects() {
   return (
     <section id="projects" className="py-24 px-6 bg-gradient-to-b from-[#0b0b0f] to-[#121218]">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center">
-          <span className="font-bold text-white tracking-tight">{t.projects.title_prefix} </span>
-          <span className="text-blue-500 italic font-serif">{t.projects.title_accent}</span> 
-          <span className="font-bold text-white tracking-tight"> {t.projects.title_suffix}</span>
-        </h2>
+        <SectionTitle
+          prefix={t.projects.title_prefix}
+          accent={t.projects.title_accent}
+          suffix={t.projects.title_suffix}
+          className="mb-12"
+        />
 
         <div className="flex flex-wrap justify-center gap-3 mb-16">
           {categories.map((category) => (

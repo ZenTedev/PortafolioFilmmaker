@@ -12,7 +12,8 @@ export default function Contact() {
 
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
-  const encode = (data: any) => {
+  // Netlify Forms espera "application/x-www-form-urlencoded".
+  const encode = (data: Record<string, string>) => {
     return Object.keys(data)
       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
       .join("&");
@@ -22,6 +23,7 @@ export default function Contact() {
     e.preventDefault();
     setStatus('submitting');
 
+    // Envío directo a "/" para que Netlify capture el formulario.
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
